@@ -1,0 +1,84 @@
+header {
+    padding: 20px 20px 0 20px;
+
+    background-color: #15849a;
+    
+
+    .logoBusqueda {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .marcaLogo {
+            width: 30vw;
+
+            a {
+                img {
+                    width: 50%;
+                }
+            }
+            h1{
+                color: white;
+            }
+        }
+
+        form {
+            label[for="text"] {
+                display: none;
+            }
+
+            input {
+                width: 40vw;
+                height: 40px;
+                border-radius: 8px;
+            }
+            
+            button {
+                height: 40px;
+                width: 90px;
+                border-radius: 5px;
+                background-color: #efd06d;
+                color: white;
+            }
+
+        }
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        .seccionesComercio {
+            ul {
+                display: flex;
+                flex-direction: row;
+                padding-right: 140px;
+
+                li {
+                    padding: 10px;
+                    a{
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .loginCompra {
+            ul {
+                display: flex;
+                flex-direction: row;
+
+                li {
+                    padding: 10px;
+                    
+                }
+                a{
+                    color: #eede87;
+                }
+            }
+
+        }
+    }
+
+}

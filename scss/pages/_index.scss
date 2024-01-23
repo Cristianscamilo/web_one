@@ -1,0 +1,14 @@
+main {
+    background-color: #123c6e;
+    #ImagenInicial{
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                width: 600px;
+                padding: 40px;
+            }
+        }
+    }
+}

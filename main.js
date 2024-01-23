@@ -1,13 +1,16 @@
+accesoGenerico  = { usuario: 'cliente1', clave: 123456}
+
 
 // Simulador de compra y login
 
 //Productos
 
-const producto1 = 419
-const producto2 = 229
-const producto3 = 319
-const producto4 = 699
-const producto5 = 799
+
+let producto1 = 419
+let producto2 = 229
+let producto3 = 319
+let producto4 = 699
+let producto5 = 799
 
 
 // Función valor final segun numero de unidades
@@ -28,7 +31,7 @@ function valorDeCuota(numeroCuotas, valorTotal) {
 
 function validarUsuario(usuario) {
     usuario = prompt('Bienvenido!, por favor ingresa tu usuario')
-    if (usuario === 'cliente001') {
+    if (usuario === accesoGenerico.usuario) {
         return usuario = true
     } else {
         return usuario = false
@@ -36,8 +39,8 @@ function validarUsuario(usuario) {
 }
 //Función validar contraseña
 function validarClave(claveUsuario) {
-    claveUsuario = prompt('Por favor digita tu contraseña')
-    if (claveUsuario === '123456') {
+    claveUsuario = parseInt(prompt('Por favor digita tu contraseña'))
+    if (claveUsuario === accesoGenerico.clave) {
         return claveUsuario = true
     } else {
         return claveUsuario = false
@@ -46,7 +49,7 @@ function validarClave(claveUsuario) {
 
 //Función proceso de selección y compra de producto
 
-function seleccionProducto(equipo, cantidad) {
+function seleccionProductoConDesc(equipo, cantidad) {
     alert(`Bienvenido a tu Store!`)
     equipo = parseInt(prompt(`Te dejaremos las mas recientes opciones de compra en oferta, para que accedas a tu nuevo movil, por favor selecciona aquella opción de tu interes con el numero de referencia asignado:
                 
@@ -59,7 +62,7 @@ function seleccionProducto(equipo, cantidad) {
   5   iphone14................. 799 
         `))
     if (equipo > 0 && equipo < 6) {
-        cantidad = parseInt(prompt(`Por favor indicanos cuantas unidades deseas llevar, maximo de productos por compra sera de 12 (Solo digita un numero en este rango)`))
+        cantidad = parseInt(prompt(`Por favor, indicanos cuantas unidades deseas llevar. El maximo de productos en oferta por compra sera de 12. (Solo ingresa un número en este rango)`))
         if (cantidad >= 1 && cantidad <= 12) {
             switch (equipo) {
                 case 1:
@@ -165,11 +168,11 @@ function seleccionProducto(equipo, cantidad) {
             }
         } else {
             alert('Digitaste un valor irreal o se cancelo el proceso, te invitamos a iniciar de nuevo')
-            seleccionProducto()
+            seleccionProductoConDesc()
         }
     } else {
         alert('Lo lamento ese no es un valor valido')
-        seleccionProducto()
+        seleccionProductoConDesc()
     }
 }
 
@@ -182,15 +185,20 @@ function IngresoCompra(usuario, claveUsuario) {
         let nickname = validarUsuario(usuario)
         let password = validarClave(claveUsuario)
         if (nickname && password) {
-            seleccionProducto()
+            seleccionProductoConDesc()
         } else {
-            alert(`Lo Lamento, clave incorrecta, intento (${intento++})/3`) 
+            alert(`Lo Lamento, usuario y/o clave incorrecta, intento (${intento++})/3`) 
         }
     }
 }
 
-//cliente001
-//123456
+
+
+
 
 IngresoCompra()
 
+
+//metodos objeto math
+//Objetos con array o "Colección de objetos" objetos literales
+//array objetos busqueda, filtrado sobre array

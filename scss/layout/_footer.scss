@@ -1,0 +1,28 @@
+footer {
+    background-color: #15849a;
+
+    .newsYPages {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        color: #efd06d;
+
+        section {}
+
+        .pagesFooter {
+            ul {
+                display: flex;
+                flex-direction: row;
+                li {
+                    padding: 10px;
+                    a {
+                        color: #efd06d;
+                    }
+                }
+            }
+        }
+    }
+}
