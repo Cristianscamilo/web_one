@@ -20,7 +20,7 @@ function valorDeCuota(numeroCuotas, valorTotal) {
 //Función validar usuario
 
 function validarUsuario(usuario) {
-    usuario = prompt('Bienvenido!, por favor ingresa tu usuario').toLocaleLowerCase()
+    usuario = prompt('Bienvenido!, por favor ingresa tu usuario').toLocaleLowerCase().trim()
     if (usuario === accesoGenerico.usuario) {
         return usuario = true
     } else {
@@ -125,7 +125,11 @@ function productosEnCategoria(categoriaProducto) {
     categoriaProducto = parseInt(prompt(`Estas son las categorias o lineas de producto que tenemos
     1 Celulares
     2 Monitores
-    3 Audifonos`))
+    3 Audifonos
+    
+    Por favor coloca el numero de la categoria que deseas observar
+
+    `))
     if (categoriaProducto >= 1 && categoriaProducto <= 3) {
         switch (categoriaProducto) {
             case 1:
@@ -135,6 +139,9 @@ function productosEnCategoria(categoriaProducto) {
                 ${listaMoviles[1].id}      ${listaMoviles[1].nombre}                
                 ${listaMoviles[2].id}      ${listaMoviles[2].nombre}                
                 ${listaMoviles[3].id}      ${listaMoviles[3].nombre}
+
+                Por favor digita el id del producto que te interesa
+
                 `
                 ))
 
@@ -142,7 +149,7 @@ function productosEnCategoria(categoriaProducto) {
                     let aceptarCompra = confirm(
                         `Seleccionaste el ${buscarproductoPorId(idDePRoducto).nombre}, tenemos en stock ${buscarproductoPorId(idDePRoducto).stock} unidades, su valor es de $${buscarproductoPorId(idDePRoducto).precio} usd, cuenta con una memoria ram de ${buscarproductoPorId(idDePRoducto).ram} y un almacenamiento de ${buscarproductoPorId(idDePRoducto).almacenamiento}.
                         
-                        ${buscarproductoPorId(idDePRoducto).resumen}
+                ${buscarproductoPorId(idDePRoducto).resumen}
 
                         ¿Deseas adquirirlo ahora?`
                     )
@@ -185,12 +192,15 @@ function productosEnCategoria(categoriaProducto) {
     ${listaMonitores[1].id}      ${listaMonitores[1].nombre}                
     ${listaMonitores[2].id}      ${listaMonitores[2].nombre}                
     ${listaMonitores[3].id}      ${listaMonitores[3].nombre}
+
+    Por favor digita el id del producto que te interesa
+
                 `
                 ))
 
                 if (idDePRoducto >= 201 && idDePRoducto <= 204) {
                     let aceptarCompra = confirm(
-                        `Seleccionaste el ${buscarproductoPorId(idDePRoducto).nombre}, tenemos en stock ${buscarproductoPorId(idDePRoducto).stock} unidades, su valor es de $${buscarproductoPorId(idDePRoducto).precio} usd. Curvatura: ${buscarproductoPorId(idDePRoducto).esCurvo}. Tiene un tamaño de ${buscarproductoPorId(idDePRoducto).pulgada} pulgadas.
+    `Seleccionaste el ${buscarproductoPorId(idDePRoducto).nombre}, tenemos en stock ${buscarproductoPorId(idDePRoducto).stock} unidades, su valor es de $${buscarproductoPorId(idDePRoducto).precio} usd. Curvatura: ${buscarproductoPorId(idDePRoducto).esCurvo}. Tiene un tamaño de ${buscarproductoPorId(idDePRoducto).pulgada} pulgadas.
                         
 ${buscarproductoPorId(idDePRoducto).caracteristicaEspecial}
 
@@ -231,12 +241,15 @@ ${buscarproductoPorId(idDePRoducto).caracteristicaEspecial}
                 break;
             case 3:
                 idDePRoducto = parseInt(prompt(`
-    id         Nombre de producto
-    ${listaAudifonos[0].id}      ${listaAudifonos[0].nombre}                
-    ${listaAudifonos[1].id}      ${listaAudifonos[1].nombre}                
-    ${listaAudifonos[2].id}      ${listaAudifonos[2].nombre}                
-    ${listaAudifonos[3].id}      ${listaAudifonos[3].nombre}
-    ${listaAudifonos[4].id}      ${listaAudifonos[4].nombre}
+    id           Nombre de producto
+    ${listaAudifonos[0].id}        ${listaAudifonos[0].nombre}                
+    ${listaAudifonos[1].id}        ${listaAudifonos[1].nombre}                
+    ${listaAudifonos[2].id}        ${listaAudifonos[2].nombre}                
+    ${listaAudifonos[3].id}        ${listaAudifonos[3].nombre}
+    ${listaAudifonos[4].id}        ${listaAudifonos[4].nombre}
+
+    Por favor digita el id del producto que te interesa
+
                 `
                 ))
 
