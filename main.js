@@ -451,7 +451,7 @@ function IngresoCompra(usuario, claveUsuario) {
     }
 }
 //Puesta en marcha
-IngresoCompra()
+//IngresoCompra()
 
 
 
@@ -459,5 +459,11 @@ IngresoCompra()
 
 
 //busqueda de productos por precio inferior a x dolares...para uso futuro
-//let filtro = listadoProductosStore.filter(producto => producto.precio <= 200)
-//console.log(filtro)
+/*
+function filtro (valor) { 
+    return listadoProductosStore.filter(producto => producto.precio <= valor)
+}
+
+console.table(filtro(50))
+
+*/
