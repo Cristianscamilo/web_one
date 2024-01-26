@@ -451,12 +451,7 @@ function IngresoCompra(usuario, claveUsuario) {
     }
 }
 //Puesta en marcha
-//IngresoCompra()
-
-
-
-
-
+IngresoCompra()
 
 //busqueda de productos por precio inferior a x dolares...para uso futuro
 /*
@@ -465,5 +460,4 @@ function filtro (valor) {
 }
 
 console.table(filtro(50))
-
 */
