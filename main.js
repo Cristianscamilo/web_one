@@ -87,8 +87,8 @@ class Monitor {
 }
 //Monitores disponibles
 const monitor1 = new Monitor(201, 'HUAWEI MateView GT 34 pulgadas Con Barra de Sonido', 34, true, 664, 40, 'Alta frecuencia de actualización y Color cinematográfico')
-const monitor2 = new Monitor(202, 'Monitor LED de 24" con panel IPS y diseño sin bordes', 24, false, 150, 16, 'Vista totalmente inmersiva, Más potencia para juegos')
-const monitor3 = new Monitor(203, 'Monitor LG 24', 24, false, 144, 10, 'tecnología AMD FreeSync brinda  movimiento fluido y sin interrupciones en alta resolución en los juegos')
+const monitor2 = new Monitor(202, 'Monitor Samsung LED de 24" con panel IPS y diseño sin bordes', 24, false, 150, 16, 'Vista totalmente inmersiva, Más potencia para juegos')
+const monitor3 = new Monitor(203, 'Monitor LG Gamer 24" Pulgadas 24GN65R Negro', 24, false, 144, 10, 'tecnología AMD FreeSync brinda  movimiento fluido y sin interrupciones en alta resolución en los juegos')
 const monitor4 = new Monitor(204, 'Monitor SAMSUNG 49" Pulgadas OLED CG930 Pl', 49, true, 2018, 14, 'Pantalla curva que se adapta completamente al contorno del ojo humano')
 
 //Array con Monitores
@@ -464,7 +464,7 @@ function IngresoCompra(usuario, claveUsuario) {
     }
 }
 //Puesta en marcha
-IngresoCompra()
+//IngresoCompra()
 
 //busqueda de productos por precio inferior a x dolares...para uso futuro
 /*

@@ -122,14 +122,147 @@ footer .newsYPages .pagesFooter ul li a {
 main {
   background-color: #123c6e;
 }
-main #ImagenInicial article {
+main #imagenInicial article {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main #ImagenInicial article img {
+main #imagenInicial article img {
   width: 600px;
   padding: 40px;
+}
+main #productosNegocio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+}
+main #productosNegocio h2 {
+  color: rgb(138, 138, 138);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+main #productosNegocio h3 {
+  display: inline-block;
+  height: 50px;
+  color: #123c6e;
+  font-weight: bold;
+}
+main #productosNegocio #listaCelulares {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main #productosNegocio #listaCelulares h3 {
+  font-size: 30px;
+}
+main #productosNegocio #listaCelulares .tarjetas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 300px;
+  height: 475px;
+  padding: 20px;
+  margin: 5px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+main #productosNegocio #listaCelulares .tarjetas h3 {
+  font-size: 20px;
+}
+main #productosNegocio #listaCelulares .tarjetas img {
+  width: 200px;
+}
+main #productosNegocio #listaCelulares .tarjetas ul {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+main #productosNegocio #listaCelulares .tarjetas p {
+  font-size: 15px;
+}
+main #productosNegocio #listaMonitores {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main #productosNegocio #listaMonitores h3 {
+  font-size: 30px;
+}
+main #productosNegocio #listaMonitores .tarjetas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 650px;
+  padding: 30px;
+  margin: 5px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+main #productosNegocio #listaMonitores .tarjetas h3 {
+  font-size: 20px;
+}
+main #productosNegocio #listaMonitores .tarjetas img {
+  width: 400px;
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+main #productosNegocio #listaMonitores .tarjetas ul {
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+main #productosNegocio #listaMonitores .tarjetas p {
+  font-size: 20px;
+}
+main #productosNegocio #listaAudifonos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main #productosNegocio #listaAudifonos h3 {
+  font-size: 30px;
+}
+main #productosNegocio #listaAudifonos .tarjetas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 550px;
+  padding: 30px;
+  margin: 5px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+main #productosNegocio #listaAudifonos .tarjetas h3 {
+  font-size: 20px;
+}
+main #productosNegocio #listaAudifonos .tarjetas img {
+  width: 100px;
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+main #productosNegocio #listaAudifonos .tarjetas ul {
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+main #productosNegocio #listaAudifonos .tarjetas p {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
