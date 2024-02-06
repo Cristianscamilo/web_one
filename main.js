@@ -474,3 +474,7 @@ function filtro (valor) {
 
 console.table(filtro(50))
 */
+
+let ejemplo = document.getElementById("listaCelulares")
+
+

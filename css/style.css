@@ -121,6 +121,71 @@ footer .newsYPages .pagesFooter ul li a {
 
 main {
   background-color: #123c6e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .accesoWeb {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 500px;
+  height: 400px;
+  font-size: 20px;
+  background-color: #07264b;
+  color: white;
+  position: fixed;
+  top: 150px;
+  border-radius: 8%;
+}
+main .accesoWeb.vistaIngreso {
+  visibility: visible;
+}
+main .accesoWeb form fieldset {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  justify-content: center;
+  align-items: center;
+}
+main .accesoWeb form fieldset legend {
+  display: flex;
+  width: 200px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+main .accesoWeb form fieldset #usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .accesoWeb form fieldset #usuario input[type=text] {
+  margin: 10px;
+  height: 30px;
+  width: 200px;
+}
+main .accesoWeb form fieldset #claveUsuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .accesoWeb form fieldset #claveUsuario input[type=password] {
+  margin: 10px;
+  height: 30px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+main .accesoWeb form button {
+  background-color: #efd06d;
+  margin-top: 10px;
+  color: white;
+  border-radius: 2%;
+  height: 30px;
+  width: 150px;
 }
 main #imagenInicial article {
   display: flex;
