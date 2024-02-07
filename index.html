@@ -27,20 +27,17 @@
             <form>
                 <label for="text">Busqueda</label>
                 <input placeholder="  Buscar articulo" type="text">
-                <button type="button">Buscar</button>
+                <button id="buscar" type="button">Buscar</button>
             </form>
         </div>
         <nav>
             <div class="seccionesComercio">
                 <ul>
                     <li>
-                        <a href="pages/productos.html">Productos</a>
+                        <a href="pages/descuentos.html">Descuentos</a>
                     </li>
                     <li>
                         <a href="pages/nosotros.html">Nosotros</a>
-                    </li>
-                    <li>
-                        <a href="pages/contacto.html">Contacto</a>
                     </li>
                     <li>
                         <a href="">Ayuda</a>
@@ -53,27 +50,27 @@
                         <a href="">Iniciar sesión</a>
                     </li>
                     <li>
-                        <a href="">🛒</a>
+                        <a href="pages/carrito.html">🛒</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
-        <div class="accesoWeb vistaIngreso">
+         <div class="accesoWeb "> <!--vistaIngreso-->
             <form>
                 <fieldset>
                     <legend>Inicio de sesión</legend>
                     <div id="usuario">
                         <label for="nombre">Usuario:</label>
-                        <input placeholder=" Ingrese su usuario aqui:" type="text" id="nombre">
+                        <input placeholder=" Ingrese su usuario 'pepe' aqui:" type="text" id="nombre">
                     </div>
                     <div id="claveUsuario">
                         <label for="clave">Contraseña:</label>
                         <input placeholder="123456" type="password" id="clave">
                     </div>
-                    <button type="submit">Ingresar</button>
-                    <button type="submit">Regresar</button>
+                    <button id="ingresar" type="submit">Ingresar</button>
+                    <button id="regresar">Regresar</button>
                </fieldset>
             </form>  
         </div>
@@ -98,7 +95,8 @@
                     </ul>
                     <p>Descubre el nuevo iPhone, con diseño de titanio aeroespacial, chip A17 Pro revolucionario y
                         sistema de cámaras potente. ¡Atrévete a la innovación, consigue el tuyo ahora!</p>
-                </article>
+                        <button type="button" id="101">Agregar al carrito</button>
+                    </article>
                 <article class="tarjetas">
                     <h3>Samsung Galaxy S24 Ultra 6.8</h3>
                     <img src="img/samsunggalaxys24ultra6.8.jpg" alt="celular">
@@ -109,6 +107,7 @@
                         <li>Memoria Ram: 12Gb</li>
                     </ul>
                     <p>¡Descubre el poder del nuevo Galaxy S24 Plus 5G! Llévalo ahora</p>
+                    <button type="button" id="102" >Agregar al carrito</button>                
                 </article>
                 <article class="tarjetas">
                     <h3>Xiaomi Poco X5 PRO 5G</h3>
@@ -120,6 +119,7 @@
                         <li>Memoria Ram: 8Gb</li>
                     </ul>
                     <p>ofrece un excelente rendimiento para la gama con una experiencia Android a muy buen nivel</p>
+                    <button type="button" id="103">Agregar al carrito</button>
                 </article>
                 <article class="tarjetas">
                     <h3>HUAWEI P60 Pro</h3>
@@ -131,6 +131,7 @@
                         <li>Memoria Ram: 8Gb</li>
                     </ul>
                     <p>Huawei P60 Pro: el nuevo teléfono inteligente de alto rendimiento de Huawei</p>
+                    <button type="button" id="104">Agregar al carrito</button>
                 </article>
             </section>
             <!--Sección 2-->
@@ -146,6 +147,7 @@
                         <li>Unidades disponibles: 40</li>
                     </ul>
                     <p>Alta frecuencia de actualización y Color cinematográfico</p>
+                    <button type="button" id="201">Agregar al carrito</button>
                 </article>
                 <article class="tarjetas">
                     <h3>Monitor Samsung LED de 24" con panel IPS y diseño sin bordes</h3>
@@ -157,6 +159,7 @@
                         <li>Unidades disponibles: 16</li>
                     </ul>
                     <p>Vista totalmente inmersiva, Más potencia para juegos</p>
+                    <button type="button" id="202">Agregar al carrito</button>
                 </article>
                 <article class="tarjetas">
                     <h3>Monitor LG Gamer 24" Pulgadas 24GN65R Negro</h3>
@@ -169,7 +172,8 @@
                     </ul>
                     <p>tecnología AMD FreeSync brinda movimiento fluido y sin interrupciones en alta resolución en los
                         juegos</p>
-                </article>
+                        <button type="button" id="203">Agregar al carrito</button>
+                    </article>
                 <article class="tarjetas">
                     <h3>Monitor SAMSUNG 49" Pulgadas OLED CG930 Pl</h3>
                     <img src="img/monitorsamsung49cg930.jpg" alt="monitor">
@@ -180,6 +184,7 @@
                         <li>Unidades disponibles: 14</li>
                     </ul>
                     <p>Pantalla curva que se adapta completamente al contorno del ojo humano</p>
+                    <button type="button" id="204">Agregar al carrito</button>                
                 </article>
             </section>
             <!--Sección 3-->
@@ -195,7 +200,8 @@
                     </ul>
                     <p>El diseño over-ear genera una comodidad insuperable, su sonido envolvente del más alto nivel se
                         convierte en el protagonista de la escena.</p>
-                </article>
+                        <button type="button" id="301">Agregar al carrito</button>
+                    </article>
                 <article class="tarjetas">
                     <h3>Audífonos gamer inalámbricos Logitech G Series G733 blanco con luz rgb LED</h3>
                     <img src="img/audífonosgamerinalámbricoslogitechgseriesg733blancoluz.jpg" alt="audifonos">
@@ -205,6 +211,7 @@
                         <li>Unidades disponibles: 20</li>
                     </ul>
                     <p>Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida.</p>
+                    <button type="button" id="302">Agregar al carrito</button>
                 </article>
                 <article class="tarjetas">
                     <h3>Diadema Bt Cancelación Ruido Anc Klip Xtreme Oasis Knh-050bk</h3>
@@ -216,6 +223,7 @@
                     </ul>
                     <p>Crea tu propio mundo de sonido con estos audífonos que ofrecen Cancelación de Ruido Activa (ANC)
                     </p>
+                    <button type="button" id="303">Agregar al carrito</button>
                 </article>
                 <article class="tarjetas">
                     <h3>Audífonos Sony Con Funcion De Manos Libres - Mdr-zx310ap Color Negro</h3>
@@ -226,6 +234,7 @@
                         <li>Unidades disponibles: 40</li>
                     </ul>
                     <p>Al ser on-ear se apoyan en tus orejas cómodamente y ofrecen una gran calidad de sonido.</p>
+                    <button type="button" id="304">Agregar al carrito</button>
                 </article>
                 <article class="tarjetas">
                     <h3>Audífonos Alámbricos Diadema Gamer Rgb Controlador Luces #1</h3>
@@ -237,6 +246,7 @@
                     </ul>
                     <p>Perfecto para toda ocasión y cualquier plataforma, audífono diseñado con tu comodidad en mente
                     </p>
+                    <button type="button" id="305">Agregar al carrito</button>
                 </article>
             </section>
         </div>
@@ -250,7 +260,7 @@
                     <form>
                         <label for="email">Mail</label>
                         <input placeholder="Ejemplo@mail.com" type="email" id="email">
-                        <button type="submit">Suscribirse</button>
+                        <button type="submit" id="suscripcion">Suscribirse</button>
                     </form>
                 </article>
             </section>

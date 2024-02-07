@@ -140,9 +140,6 @@ main .accesoWeb {
   top: 150px;
   border-radius: 8%;
 }
-main .accesoWeb.vistaIngreso {
-  visibility: visible;
-}
 main .accesoWeb form fieldset {
   width: 100px;
   display: flex;
@@ -217,6 +214,7 @@ main #productosNegocio h3 {
   height: 50px;
   color: #123c6e;
   font-weight: bold;
+  height: 50px;
 }
 main #productosNegocio #listaCelulares {
   display: flex;
@@ -227,6 +225,7 @@ main #productosNegocio #listaCelulares {
 }
 main #productosNegocio #listaCelulares h3 {
   font-size: 30px;
+  height: 50px;
 }
 main #productosNegocio #listaCelulares .tarjetas {
   display: flex;
@@ -234,7 +233,7 @@ main #productosNegocio #listaCelulares .tarjetas {
   align-items: center;
   justify-content: flex-start;
   width: 300px;
-  height: 475px;
+  height: 530px;
   padding: 20px;
   margin: 5px;
   margin-bottom: 30px;
@@ -242,6 +241,7 @@ main #productosNegocio #listaCelulares .tarjetas {
 }
 main #productosNegocio #listaCelulares .tarjetas h3 {
   font-size: 20px;
+  height: 50px;
 }
 main #productosNegocio #listaCelulares .tarjetas img {
   width: 200px;
@@ -252,6 +252,16 @@ main #productosNegocio #listaCelulares .tarjetas ul {
 }
 main #productosNegocio #listaCelulares .tarjetas p {
   font-size: 15px;
+  height: 100px;
+}
+main #productosNegocio #listaCelulares .tarjetas button {
+  background-color: #efd06d;
+  color: #ffffff;
+  width: 120px;
+  height: 30px;
+  border: none;
+  margin: 10px;
+  border-radius: 5%;
 }
 main #productosNegocio #listaMonitores {
   display: flex;
@@ -262,6 +272,7 @@ main #productosNegocio #listaMonitores {
 }
 main #productosNegocio #listaMonitores h3 {
   font-size: 30px;
+  height: 50px;
 }
 main #productosNegocio #listaMonitores .tarjetas {
   display: flex;
@@ -269,7 +280,7 @@ main #productosNegocio #listaMonitores .tarjetas {
   align-items: center;
   justify-content: center;
   width: 500px;
-  height: 650px;
+  height: 670px;
   padding: 30px;
   margin: 5px;
   margin-bottom: 30px;
@@ -277,6 +288,7 @@ main #productosNegocio #listaMonitores .tarjetas {
 }
 main #productosNegocio #listaMonitores .tarjetas h3 {
   font-size: 20px;
+  height: 50px;
 }
 main #productosNegocio #listaMonitores .tarjetas img {
   width: 400px;
@@ -291,6 +303,15 @@ main #productosNegocio #listaMonitores .tarjetas ul {
 main #productosNegocio #listaMonitores .tarjetas p {
   font-size: 20px;
 }
+main #productosNegocio #listaMonitores .tarjetas button {
+  background-color: #efd06d;
+  color: #ffffff;
+  width: 120px;
+  height: 30px;
+  border: none;
+  margin: 10px;
+  border-radius: 5%;
+}
 main #productosNegocio #listaAudifonos {
   display: flex;
   flex-direction: row;
@@ -300,6 +321,7 @@ main #productosNegocio #listaAudifonos {
 }
 main #productosNegocio #listaAudifonos h3 {
   font-size: 30px;
+  height: 50px;
 }
 main #productosNegocio #listaAudifonos .tarjetas {
   display: flex;
@@ -307,14 +329,16 @@ main #productosNegocio #listaAudifonos .tarjetas {
   align-items: center;
   justify-content: center;
   width: 300px;
-  height: 550px;
+  height: 620px;
   padding: 30px;
   margin: 5px;
   margin-bottom: 30px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  justify-content: space-between;
 }
 main #productosNegocio #listaAudifonos .tarjetas h3 {
   font-size: 20px;
+  height: 80px;
 }
 main #productosNegocio #listaAudifonos .tarjetas img {
   width: 100px;
@@ -327,7 +351,16 @@ main #productosNegocio #listaAudifonos .tarjetas ul {
   font-size: 15px;
 }
 main #productosNegocio #listaAudifonos .tarjetas p {
-  font-size: 20px;
+  font-size: 18px;
+}
+main #productosNegocio #listaAudifonos .tarjetas button {
+  background-color: #efd06d;
+  color: #ffffff;
+  width: 120px;
+  min-height: 30px;
+  border: none;
+  margin: 20px;
+  border-radius: 5%;
 }
 
 /*# sourceMappingURL=style.css.map */

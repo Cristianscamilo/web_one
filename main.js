@@ -475,6 +475,12 @@ function filtro (valor) {
 console.table(filtro(50))
 */
 
-let ejemplo = document.getElementById("listaCelulares")
+let compra1 = document.getElementById("101")
 
 
+function compra() {
+    console.log('el producto comprado es '+ compra1.id)
+}
+
+
+compra1.addEventListener('click', compra1)
