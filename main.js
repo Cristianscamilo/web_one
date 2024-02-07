@@ -475,12 +475,15 @@ function filtro (valor) {
 console.table(filtro(50))
 */
 
-let compra1 = document.getElementById("101")
 
+const inputRegistroUsuario = document.getElementById("nombreEnLogin")
+const inputClave = document.getElementById("claveAcceso")
 
-function compra() {
-    console.log('el producto comprado es '+ compra1.id)
+const botonIngreso = document.getElementById("ingresarAlComercio")
+const botonRegresar = document.getElementById("regresarOSalir")
+
+function accesoCliente() {
+    localStorage.setItem("user", inputRegistroUsuario.value)
+    localStorage.setItem("clave", inputClave.value)
 }
-
-
-compra1.addEventListener('click', compra1)
+botonIngreso.addEventListener("click", accesoCliente);

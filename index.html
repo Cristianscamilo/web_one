@@ -47,7 +47,7 @@
             <div class="loginCompra">
                 <ul>
                     <li>
-                        <a href="">Iniciar sesión</a>
+                        <a id="inicioDeSesion">Iniciar sesión</a>
                     </li>
                     <li>
                         <a href="pages/carrito.html">🛒</a>
@@ -56,199 +56,23 @@
             </div>
         </nav>
     </header>
-    <main>
-         <div class="accesoWeb "> <!--vistaIngreso-->
-            <form>
-                <fieldset>
-                    <legend>Inicio de sesión</legend>
-                    <div id="usuario">
-                        <label for="nombre">Usuario:</label>
-                        <input placeholder=" Ingrese su usuario 'pepe' aqui:" type="text" id="nombre">
-                    </div>
-                    <div id="claveUsuario">
-                        <label for="clave">Contraseña:</label>
-                        <input placeholder="123456" type="password" id="clave">
-                    </div>
-                    <button id="ingresar" type="submit">Ingresar</button>
-                    <button id="regresar">Regresar</button>
-               </fieldset>
-            </form>  
-        </div>
-        <section id="imagenInicial">
-            <article>
-                <img src="img/aviso_open.jpg" alt="aviso open en ventana">
-            </article>
-        </section>
-        <div id="productosNegocio">
-            <h2> PRODUCTOS ACTUALES </h2>
-            <!--Sección 1-->
-            <h3>Celulares</h3>
-            <section id="listaCelulares">
-                <article class="tarjetas">
-                    <h3>iphone 15 6.1</h3>
-                    <img src="img/iphone_15.jpg" alt="celular">
-                    <ul>
-                        <li>Precio: 799 usd</li>
-                        <li>Unidades disponibles: 100</li>
-                        <li>Memoria interna: 128 Gb</li>
-                        <li>Memoria Ram:6Gb</li>
-                    </ul>
-                    <p>Descubre el nuevo iPhone, con diseño de titanio aeroespacial, chip A17 Pro revolucionario y
-                        sistema de cámaras potente. ¡Atrévete a la innovación, consigue el tuyo ahora!</p>
-                        <button type="button" id="101">Agregar al carrito</button>
-                    </article>
-                <article class="tarjetas">
-                    <h3>Samsung Galaxy S24 Ultra 6.8</h3>
-                    <img src="img/samsunggalaxys24ultra6.8.jpg" alt="celular">
-                    <ul>
-                        <li>Precio: 1581 usd</li>
-                        <li>Unidades disponibles: 50</li>
-                        <li>Memoria interna: 512 Gb</li>
-                        <li>Memoria Ram: 12Gb</li>
-                    </ul>
-                    <p>¡Descubre el poder del nuevo Galaxy S24 Plus 5G! Llévalo ahora</p>
-                    <button type="button" id="102" >Agregar al carrito</button>                
-                </article>
-                <article class="tarjetas">
-                    <h3>Xiaomi Poco X5 PRO 5G</h3>
-                    <img src="img/Xiaomi-Poco-x5-Pro-5g-Colores.jpg" alt="celular">
-                    <ul>
-                        <li>Precio: 289 usd</li>
-                        <li>Unidades disponibles: 200</li>
-                        <li>Memoria interna: 256 Gb</li>
-                        <li>Memoria Ram: 8Gb</li>
-                    </ul>
-                    <p>ofrece un excelente rendimiento para la gama con una experiencia Android a muy buen nivel</p>
-                    <button type="button" id="103">Agregar al carrito</button>
-                </article>
-                <article class="tarjetas">
-                    <h3>HUAWEI P60 Pro</h3>
-                    <img src="img/huaweip60pro.png" alt="celular">
-                    <ul>
-                        <li>Precio: 1079 usd</li>
-                        <li>Unidades disponibles: 35</li>
-                        <li>Memoria interna: 256 Gb</li>
-                        <li>Memoria Ram: 8Gb</li>
-                    </ul>
-                    <p>Huawei P60 Pro: el nuevo teléfono inteligente de alto rendimiento de Huawei</p>
-                    <button type="button" id="104">Agregar al carrito</button>
-                </article>
-            </section>
-            <!--Sección 2-->
-            <h3>Monitores</h3>
-            <section id="listaMonitores">
-                <article class="tarjetas">
-                    <h3>HUAWEI MateView GT 34 pulgadas Con Barra de Sonido</h3>
-                    <img src="img/huaweimategt34.png" alt="monitor">
-                    <ul>
-                        <li>Precio: 664 usd </li>
-                        <li>Pulgadas: 34</li>
-                        <li>Curvo: Si</li>
-                        <li>Unidades disponibles: 40</li>
-                    </ul>
-                    <p>Alta frecuencia de actualización y Color cinematográfico</p>
-                    <button type="button" id="201">Agregar al carrito</button>
-                </article>
-                <article class="tarjetas">
-                    <h3>Monitor Samsung LED de 24" con panel IPS y diseño sin bordes</h3>
-                    <img src="img/samsung24conpanelips.jpg" alt="monitor">
-                    <ul>
-                        <li>Precio: 150 usd </li>
-                        <li>Pulgadas: 24</li>
-                        <li>Curvo: No</li>
-                        <li>Unidades disponibles: 16</li>
-                    </ul>
-                    <p>Vista totalmente inmersiva, Más potencia para juegos</p>
-                    <button type="button" id="202">Agregar al carrito</button>
-                </article>
-                <article class="tarjetas">
-                    <h3>Monitor LG Gamer 24" Pulgadas 24GN65R Negro</h3>
-                    <img src="img/monitorlgnegro24gamer.jpg" alt="monitor">
-                    <ul>
-                        <li>Precio: 144 usd </li>
-                        <li>Pulgadas: 24</li>
-                        <li>Curvo: No</li>
-                        <li>Unidades disponibles: 10</li>
-                    </ul>
-                    <p>tecnología AMD FreeSync brinda movimiento fluido y sin interrupciones en alta resolución en los
-                        juegos</p>
-                        <button type="button" id="203">Agregar al carrito</button>
-                    </article>
-                <article class="tarjetas">
-                    <h3>Monitor SAMSUNG 49" Pulgadas OLED CG930 Pl</h3>
-                    <img src="img/monitorsamsung49cg930.jpg" alt="monitor">
-                    <ul>
-                        <li>Precio: 2018 usd </li>
-                        <li>Pulgadas: 49</li>
-                        <li>Curvo: Si</li>
-                        <li>Unidades disponibles: 14</li>
-                    </ul>
-                    <p>Pantalla curva que se adapta completamente al contorno del ojo humano</p>
-                    <button type="button" id="204">Agregar al carrito</button>                
-                </article>
-            </section>
-            <!--Sección 3-->
-            <h3>Audífonos</h3>
-            <section id="listaAudifonos">
-                <article class="tarjetas">
-                    <h3>Audifono Diadema Bose Noise Cancelling Headphones 700 Blueto Color Black</h3>
-                    <img src="img/audifonodiademabosenoisecancellingheadphones700bluetocolorblack.jpg" alt="audifonos">
-                    <ul>
-                        <li>Precio: 414 usd</li>
-                        <li>Inhalambrico: Si</li>
-                        <li>Unidades disponibles: 20</li>
-                    </ul>
-                    <p>El diseño over-ear genera una comodidad insuperable, su sonido envolvente del más alto nivel se
-                        convierte en el protagonista de la escena.</p>
-                        <button type="button" id="301">Agregar al carrito</button>
-                    </article>
-                <article class="tarjetas">
-                    <h3>Audífonos gamer inalámbricos Logitech G Series G733 blanco con luz rgb LED</h3>
-                    <img src="img/audífonosgamerinalámbricoslogitechgseriesg733blancoluz.jpg" alt="audifonos">
-                    <ul>
-                        <li>Precio: 174 usd</li>
-                        <li>Inhalambrico: Si</li>
-                        <li>Unidades disponibles: 20</li>
-                    </ul>
-                    <p>Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida.</p>
-                    <button type="button" id="302">Agregar al carrito</button>
-                </article>
-                <article class="tarjetas">
-                    <h3>Diadema Bt Cancelación Ruido Anc Klip Xtreme Oasis Knh-050bk</h3>
-                    <img src="img/diademabtcancelaciónruidoancklipxtremeoasisknh-050bk.jpg" alt="audifonos">
-                    <ul>
-                        <li>Precio: 35.79 usd</li>
-                        <li>Inhalambrico: Si</li>
-                        <li>Unidades disponibles: 40</li>
-                    </ul>
-                    <p>Crea tu propio mundo de sonido con estos audífonos que ofrecen Cancelación de Ruido Activa (ANC)
-                    </p>
-                    <button type="button" id="303">Agregar al carrito</button>
-                </article>
-                <article class="tarjetas">
-                    <h3>Audífonos Sony Con Funcion De Manos Libres - Mdr-zx310ap Color Negro</h3>
-                    <img src="img/sonyfonfunciondemanoslibres.jpg" alt="audifonos">
-                    <ul>
-                        <li>Precio: 20 usd</li>
-                        <li>Inhalambrico: No</li>
-                        <li>Unidades disponibles: 40</li>
-                    </ul>
-                    <p>Al ser on-ear se apoyan en tus orejas cómodamente y ofrecen una gran calidad de sonido.</p>
-                    <button type="button" id="304">Agregar al carrito</button>
-                </article>
-                <article class="tarjetas">
-                    <h3>Audífonos Alámbricos Diadema Gamer Rgb Controlador Luces #1</h3>
-                    <img src="img/audifonoalámbricodiademagamerrgbcontroladorluces1.jpg" alt="audifonos">
-                    <ul>
-                        <li>Precio: 71.69 usd</li>
-                        <li>Inhalambrico: No</li>
-                        <li>Unidades disponibles: 25</li>
-                    </ul>
-                    <p>Perfecto para toda ocasión y cualquier plataforma, audífono diseñado con tu comodidad en mente
-                    </p>
-                    <button type="button" id="305">Agregar al carrito</button>
-                </article>
-            </section>
+    <main >
+        <div class="accesoWeb visibleLogin">
+        <form>
+            <fieldset>
+                <legend>Inicio de sesión</legend>
+                <div id="usuario">
+                    <label for="nombreEnLogin">Usuario:</label>
+                    <input placeholder=" Ingrese su usuario 'pepe' aqui:" type="text" id="nombreEnLogin">
+                </div>
+                <div id="claveUsuario">
+                    <label for="claveAcceso">Contraseña:</label>
+                    <input placeholder="123456" type="text" id="claveAcceso">
+                </div>
+                <button id="ingresarAlComercio" type="submit">Ingresar</button>
+                <button id="regresarOSalir">Regresar</button>
+           </fieldset>
+        </form>
         </div>
     </main>
 
