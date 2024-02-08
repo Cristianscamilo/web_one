@@ -37,6 +37,41 @@ h4 {
   font-family: "Montserrat", sans-serif;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+nav .seccionesComercio ul {
+  display: flex;
+  flex-direction: row;
+  padding-right: 140px;
+}
+nav .seccionesComercio ul li {
+  padding: 10px;
+}
+nav .seccionesComercio ul li a {
+  color: white;
+}
+nav .loginCompra {
+  display: flex;
+  flex-direction: row;
+}
+nav .loginCompra ul {
+  display: flex;
+  flex-direction: row;
+}
+nav .loginCompra ul li {
+  padding: 10px;
+}
+nav .loginCompra ul li a {
+  color: #eede87;
+  visibility: visible;
+}
+nav .loginCompra ul li a.off {
+  visibility: hidden;
+}
+
 header {
   padding: 20px 20px 0 20px;
   background-color: #15849a;
@@ -69,32 +104,6 @@ header .logoBusqueda form button {
   border-radius: 5px;
   background-color: #efd06d;
   color: white;
-}
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-header nav .seccionesComercio ul {
-  display: flex;
-  flex-direction: row;
-  padding-right: 140px;
-}
-header nav .seccionesComercio ul li {
-  padding: 10px;
-}
-header nav .seccionesComercio ul li a {
-  color: white;
-}
-header nav .loginCompra ul {
-  display: flex;
-  flex-direction: row;
-}
-header nav .loginCompra ul li {
-  padding: 10px;
-}
-header nav .loginCompra ul a {
-  color: #eede87;
 }
 
 footer {
@@ -145,6 +154,12 @@ main .accesoWeb {
 main .accesoWeb.visibleLogin {
   visibility: visible;
 }
+main .accesoWeb #regresarOSalir {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  border-radius: 4px;
+}
 main .accesoWeb form fieldset {
   width: 100px;
   display: flex;
@@ -175,11 +190,19 @@ main .accesoWeb form fieldset #claveUsuario {
   flex-direction: column;
   align-items: center;
 }
-main .accesoWeb form fieldset #claveUsuario input[type=text] {
+main .accesoWeb form fieldset #claveUsuario input[type=password] {
   margin: 10px;
   height: 30px;
   width: 200px;
   margin-bottom: 10px;
+}
+main .accesoWeb form fieldset .accesoNegado {
+  color: red;
+  font-size: 10px;
+  visibility: hidden;
+}
+main .accesoWeb form fieldset .accesoNegado.alertaAcceso {
+  visibility: visible;
 }
 main .accesoWeb form button {
   background-color: #efd06d;

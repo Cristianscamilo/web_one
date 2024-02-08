@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .seccionesComercio {
+    ul {
+      display: flex;
+      flex-direction: row;
+      padding-right: 140px;
+
+      li {
+        padding: 10px;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .loginCompra {
+    display: flex;
+    flex-direction: row;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        padding: 10px;
+        a {
+          color: #eede87;
+          visibility: visible;
+          &.off {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+}

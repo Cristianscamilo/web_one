@@ -47,8 +47,13 @@
             <div class="loginCompra">
                 <ul>
                     <li>
-                        <a id="inicioDeSesion">Iniciar sesión</a>
+                        <a class="cierreDeSesion off">Cerrar sesión</a>
                     </li>
+                    <li>
+                        <a class="inicioDeSesion">Iniciar sesión</a>
+                    </li>
+                </ul>
+                <ul>
                     <li>
                         <a href="pages/carrito.html">🛒</a>
                     </li>
@@ -57,7 +62,8 @@
         </nav>
     </header>
     <main >
-        <div class="accesoWeb visibleLogin">
+        <div class="accesoWeb">
+            <button id="regresarOSalir">❌</button>
         <form>
             <fieldset>
                 <legend>Inicio de sesión</legend>
@@ -67,10 +73,10 @@
                 </div>
                 <div id="claveUsuario">
                     <label for="claveAcceso">Contraseña:</label>
-                    <input placeholder="123456" type="text" id="claveAcceso">
+                    <input placeholder="123456" type="password" id="claveAcceso">
                 </div>
                 <button id="ingresarAlComercio" type="submit">Ingresar</button>
-                <button id="regresarOSalir">Regresar</button>
+                <p class="accesoNegado">Usuario y/o contraseña incorrecta </p>
            </fieldset>
         </form>
         </div>
