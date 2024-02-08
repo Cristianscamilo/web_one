@@ -133,7 +133,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
 }
 main .accesoWeb {
   visibility: hidden;
@@ -203,6 +202,10 @@ main .accesoWeb form fieldset .accesoNegado {
 }
 main .accesoWeb form fieldset .accesoNegado.alertaAcceso {
   visibility: visible;
+}
+main .accesoWeb form fieldset #olvidoDeClave {
+  color: #ffffff;
+  font-size: 10px;
 }
 main .accesoWeb form button {
   background-color: #efd06d;

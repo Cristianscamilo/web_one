@@ -84,7 +84,7 @@ let productoconDescuento5 = new productosConDescuentoEspecial(
 
 //Constructor Celulares para venta al publico
 class Celular {
-  constructor(id, nombre, precio, stock, almacenamiento, ram, resumen) {
+  constructor(id, nombre, precio, stock, almacenamiento, ram, resumen, img) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
@@ -92,6 +92,7 @@ class Celular {
     this.almacenamiento = almacenamiento;
     this.ram = ram;
     this.resumen = resumen;
+    this.img = img;
   }
 }
 //Celulares disponibles
@@ -102,7 +103,8 @@ const cel1 = new Celular(
   100,
   "128 GB",
   "6 GB",
-  "Descubre el nuevo iPhone, con diseño de titanio aeroespacial, chip A17 Pro revolucionario y sistema de cámaras potente. ¡Atrévete a la innovación, consigue el tuyo ahora!"
+  "Descubre el nuevo iPhone, con diseño de titanio aeroespacial, chip A17 Pro revolucionario y sistema de cámaras potente. ¡Atrévete a la innovación, consigue el tuyo ahora!",
+  "img/iphone_15.jpg"
 );
 const cel2 = new Celular(
   102,
@@ -111,7 +113,8 @@ const cel2 = new Celular(
   50,
   "512 GB",
   "12 GB",
-  "¡Descubre el poder del nuevo Galaxy S24 Plus 5G! Llévalo ahora"
+  "¡Descubre el poder del nuevo Galaxy S24 Plus 5G! Llévalo ahora",
+  "img/samsunggalaxys24ultra6.8.jpg"
 );
 const cel3 = new Celular(
   103,
@@ -120,7 +123,8 @@ const cel3 = new Celular(
   200,
   "256 GB",
   "8 GB",
-  "ofrece un excelente rendimiento para la gama con una experiencia Android a muy buen nivel"
+  "ofrece un excelente rendimiento para la gama con una experiencia Android a muy buen nivel",
+  "img/Xiaomi-Poco-x5-Pro-5g-Colores.jpg"
 );
 const cel4 = new Celular(
   104,
@@ -129,11 +133,13 @@ const cel4 = new Celular(
   35,
   "256 GB",
   "8 GB",
-  "Huawei P60 Pro: el nuevo teléfono inteligente de alto rendimiento de Huawei"
+  "Huawei P60 Pro: el nuevo teléfono inteligente de alto rendimiento de Huawei",
+  "img/huaweip60pro.png"
 );
 
 //Array con celulares
 const listaMoviles = [cel1, cel2, cel3, cel4];
+
 //Constructor Monitores para venta al publico
 class Monitor {
   constructor(
@@ -143,7 +149,8 @@ class Monitor {
     esCurvo,
     precio,
     stock,
-    caracteristicaEspecial
+    caracteristicaEspecial,
+    img
   ) {
     this.id = id;
     this.nombre = nombre;
@@ -152,6 +159,7 @@ class Monitor {
     this.precio = precio;
     this.stock = stock;
     this.caracteristicaEspecial = caracteristicaEspecial;
+    this.img = img;
   }
 }
 //Monitores disponibles
@@ -162,7 +170,8 @@ const monitor1 = new Monitor(
   true,
   664,
   40,
-  "Alta frecuencia de actualización y Color cinematográfico"
+  "Alta frecuencia de actualización y Color cinematográfico",
+  "img/huaweimategt34.png"
 );
 const monitor2 = new Monitor(
   202,
@@ -171,7 +180,8 @@ const monitor2 = new Monitor(
   false,
   150,
   16,
-  "Vista totalmente inmersiva, Más potencia para juegos"
+  "Vista totalmente inmersiva, Más potencia para juegos",
+  "img/samsung24conpanelips.jpg"
 );
 const monitor3 = new Monitor(
   203,
@@ -180,7 +190,8 @@ const monitor3 = new Monitor(
   false,
   144,
   10,
-  "tecnología AMD FreeSync brinda  movimiento fluido y sin interrupciones en alta resolución en los juegos"
+  "tecnología AMD FreeSync brinda  movimiento fluido y sin interrupciones en alta resolución en los juegos",
+  "img/monitorlgnegro24gamer.jpg"
 );
 const monitor4 = new Monitor(
   204,
@@ -189,20 +200,23 @@ const monitor4 = new Monitor(
   true,
   2018,
   14,
-  "Pantalla curva que se adapta completamente al contorno del ojo humano"
+  "Pantalla curva que se adapta completamente al contorno del ojo humano",
+  "img/monitorsamsung49cg930.jpg"
 );
 
 //Array con Monitores
 const listaMonitores = [monitor1, monitor2, monitor3, monitor4];
+
 //Constructor Audifonos para venta al publico
 class Audifono {
-  constructor(id, nombre, precio, stock, esInalambrico, resumen) {
+  constructor(id, nombre, precio, stock, esInalambrico, resumen, img) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
     this.stock = stock;
     this.esInalambrico = esInalambrico;
     this.resumen = resumen;
+    this.img = img;
   }
 }
 //Audifonos disponibles
@@ -212,7 +226,8 @@ const audifono1 = new Audifono(
   414,
   20,
   true,
-  "El diseño over-ear genera una comodidad insuperable, su sonido envolvente del más alto nivel se convierte en el protagonista de la escena."
+  "El diseño over-ear genera una comodidad insuperable, su sonido envolvente del más alto nivel se convierte en el protagonista de la escena.",
+  "img/audifonodiademabosenoisecancellingheadphones700bluetocolorblack.jpg"
 );
 const audifono2 = new Audifono(
   302,
@@ -220,7 +235,8 @@ const audifono2 = new Audifono(
   174,
   20,
   true,
-  " Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida."
+  " Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida.",
+  "img/audífonosgamerinalámbricoslogitechgseriesg733blancoluz.jpg"
 );
 const audifono3 = new Audifono(
   303,
@@ -228,7 +244,8 @@ const audifono3 = new Audifono(
   35.79,
   40,
   true,
-  "Crea tu propio mundo de sonido con estos audífonos que ofrecen Cancelación de Ruido Activa (ANC)"
+  "Crea tu propio mundo de sonido con estos audífonos que ofrecen Cancelación de Ruido Activa (ANC)",
+  "img/diademabtcancelaciónruidoancklipxtremeoasisknh-050bk.jpg"
 );
 const audifono4 = new Audifono(
   304,
@@ -236,7 +253,8 @@ const audifono4 = new Audifono(
   20,
   40,
   false,
-  "Al ser on-ear se apoyan en tus orejas cómodamente y ofrecen una gran calidad de sonido."
+  "Al ser on-ear se apoyan en tus orejas cómodamente y ofrecen una gran calidad de sonido.",
+  "img/sonyfonfunciondemanoslibres.jpg"
 );
 const audifono5 = new Audifono(
   305,
@@ -244,7 +262,8 @@ const audifono5 = new Audifono(
   71.69,
   25,
   false,
-  "Perfecto para toda ocasión y cualquier plataforma, audífono diseñado con tu comodidad en mente"
+  "Perfecto para toda ocasión y cualquier plataforma, audífono diseñado con tu comodidad en mente",
+  "img/audifonoalámbricodiademagamerrgbcontroladorluces1.jpg"
 );
 
 //Array con Audifonos
@@ -856,7 +875,6 @@ botonIngreso.addEventListener("click", (event) => {
   const claveRegistroUser = inputClave.value;
 
   if (registroUsuario === usuario && claveRegistroUser === clave) {
-
     localStorage.setItem("user", registroUsuario);
     localStorage.setItem("clave", claveRegistroUser);
 
@@ -881,3 +899,29 @@ agregarCierreSesión.addEventListener("click", (event) => {
   localStorage.removeItem("user");
   localStorage.removeItem("clave");
 });
+
+//objetos: listaMoviles listaMonitores listaAudifonos
+
+
+const sectionCelulares = document.querySelector("#listaCelulares");
+
+
+for (const movil of listaMoviles) {
+
+  let vistaProductos = document.createElement("article");
+  vistaProductos.classList.add("tarjetas")
+  vistaProductos.innerHTML = `
+
+  <h3>${movil.nombre}</h3>
+  <img src=${movil.img} alt="celular">
+  <ul>
+      <li>Precio: ${movil.precio}</li>
+      <li>Unidades disponibles: ${movil.stock}</li>
+      <li>Memoria interna: ${movil.almacenamiento}</li>
+      <li>Memoria Ram:${movil.ram}</li>
+  </ul>
+  <p>${movil.resumen}</p>
+      <button type="button" id=${movil.id}>Agregar al carrito</button>
+`
+sectionCelulares.appendChild(vistaProductos)
+}

@@ -3,7 +3,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
 
   .accesoWeb {
     visibility: hidden;
@@ -76,6 +75,10 @@ main {
           &.alertaAcceso{
             visibility: visible;
           }
+        }
+        #olvidoDeClave{
+          color: #ffffff;
+          font-size: 10px;
         }
       }
       button {
