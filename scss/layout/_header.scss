@@ -1,37 +1,44 @@
 header {
-    padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 
-    background-color: #15849a;
-    
+  background-color: #15849a;
 
-    .logoBusqueda {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+  .logoBusqueda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-        .marcaLogo {
-            width: 30vw;
+    .marcaLogo {
+      width: 30vw;
 
-            a {
-                img {
-                    width: 50%;
-                }
-            }
-            h1{
-                color: white;
-            }
+      a {
+        img {
+          width: 50%;
         }
-
-        form {
-            label[for="busqueda"] {
-                display: none;
-            }
-
-            input {
-                width: 40vw;
-                height: 40px;
-                border-radius: 8px;
-            }
-        }
+      }
+      h1 {
+        color: white;
+      }
     }
+
+    form {
+      label[for="busqueda"] {
+        display: none;
+      }
+
+      input {
+        width: 40vw;
+        height: 40px;
+        border-radius: 8px;
+      }
+      button {
+        background-color: #efd06d;
+        margin-top: 10px;
+        color: #ffff;
+        border-radius: 5%;
+        height: 40px;
+        width: 100px;
+      }
+    }
+  }
 }

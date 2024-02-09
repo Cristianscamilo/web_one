@@ -5,7 +5,6 @@ accesoGenerico = { usuario: "pepe", clave: "123456" };
 
 let { usuario, clave } = accesoGenerico;
 
-
 //Constructor Celulares para venta al publico
 class Celular {
   constructor(id, nombre, precio, stock, almacenamiento, ram, resumen, img) {
@@ -146,7 +145,7 @@ class Audifono {
 //Audifonos disponibles
 const audifono1 = new Audifono(
   301,
-  "Audífonos Diadema Bose Noise Cancelling Headphones 700 Blueto Color Black",
+  "Audifonos Diadema Bose Noise Cancelling Headphones 700 Blueto Color Black",
   414,
   20,
   true,
@@ -155,7 +154,7 @@ const audifono1 = new Audifono(
 );
 const audifono2 = new Audifono(
   302,
-  "Audífonos gamer inalámbricos Logitech G Series G733 blanco con luz rgb LED",
+  "Audifonos gamer inalámbricos Logitech G Series G733 blanco con luz rgb LED",
   174,
   20,
   true,
@@ -164,16 +163,16 @@ const audifono2 = new Audifono(
 );
 const audifono3 = new Audifono(
   303,
-  "Audífonos Diadema Bt Cancelación Ruido Anc Klip Xtreme Oasis Knh-050bk",
+  "Audifonos Diadema Bt Cancelación Ruido Anc Klip Xtreme Oasis Knh-050bk",
   35.79,
   40,
   true,
-  "Crea tu propio mundo de sonido con estos audífonos que ofrecen Cancelación de Ruido Activa (ANC)",
+  "Crea tu propio mundo de sonido con estos audifonos que ofrecen Cancelación de Ruido Activa (ANC)",
   "img/diademabtcancelaciónruidoancklipxtremeoasisknh-050bk.jpg"
 );
 const audifono4 = new Audifono(
   304,
-  "Audífonos Sony Con Funcion De Manos Libres - Mdr-zx310ap Color Negro",
+  "Audifonos Sony Con Funcion De Manos Libres - Mdr-zx310ap Color Negro",
   20,
   40,
   false,
@@ -182,7 +181,7 @@ const audifono4 = new Audifono(
 );
 const audifono5 = new Audifono(
   305,
-  "Audífonos Alámbricos Diadema Gamer Rgb Controlador Luces #1",
+  "Audifonos Alámbricos Diadema Gamer Rgb Controlador Luces #1",
   71.69,
   25,
   false,
@@ -194,7 +193,6 @@ const audifono5 = new Audifono(
 const listaAudifonos = [audifono1, audifono2, audifono3, audifono4, audifono5];
 //Lista de los productos del negocio a la venta
 let listadoProductosStore = listaMoviles.concat(listaMonitores, listaAudifonos);
-
 
 //selectores
 const agregarLogin = document.querySelector(".inicioDeSesion");
@@ -256,14 +254,11 @@ agregarCierreSesión.addEventListener("click", (event) => {
 
 //objetos: listaMoviles listaMonitores listaAudifonos
 
-
 const sectionCelulares = document.querySelector("#listaCelulares");
 
-
 for (const movil of listaMoviles) {
-
   let vistaProductosMobile = document.createElement("article");
-  vistaProductosMobile.classList.add("tarjetas")
+  vistaProductosMobile.classList.add("tarjetas");
   vistaProductosMobile.innerHTML = `
 
   <h3>${movil.nombre}</h3>
@@ -275,18 +270,16 @@ for (const movil of listaMoviles) {
       <li>Memoria Ram:${movil.ram}</li>
   </ul>
   <p>${movil.resumen}</p>
-      <button type="button" id=${movil.id}>Agregar al carrito</button>
-`
-sectionCelulares.appendChild(vistaProductosMobile)
+      <button type="button" id=${movil.id} class="comprarUnidad">Agregar al carrito</button>
+`;
+  sectionCelulares.appendChild(vistaProductosMobile);
 }
-
 
 const sectionMonitores = document.querySelector("#listaMonitores");
 
 for (const monitor of listaMonitores) {
-
   let vistaProductosMonitores = document.createElement("article");
-  vistaProductosMonitores.classList.add("tarjetas")
+  vistaProductosMonitores.classList.add("tarjetas");
   vistaProductosMonitores.innerHTML = `
 
                     <h3>${monitor.nombre}</h3>
@@ -298,19 +291,17 @@ for (const monitor of listaMonitores) {
                         <li>Unidades disponibles: ${monitor.stock}</li>
                     </ul>
                     <p>${monitor.caracteristicaEspecial}</p>
-                    <button type="button" id="201">Agregar al carrito</button>
+                    <button type="button" id=${monitor.id} class="comprarUnidad">Agregar al carrito</button>
   
-`
-sectionMonitores.appendChild(vistaProductosMonitores)
+`;
+  sectionMonitores.appendChild(vistaProductosMonitores);
 }
-
 
 const sectionAudifonos = document.querySelector("#listaAudifonos");
 
 for (const audifono of listaAudifonos) {
-
   let vistaProductosAudifonos = document.createElement("article");
-  vistaProductosAudifonos.classList.add("tarjetas")
+  vistaProductosAudifonos.classList.add("tarjetas");
   vistaProductosAudifonos.innerHTML = `
 
   <h3>${audifono.nombre}</h3>
@@ -321,53 +312,189 @@ for (const audifono of listaAudifonos) {
       <li>Unidades disponibles: ${audifono.stock}</li>
   </ul>
   <p>${audifono.resumen}</p>
-      <button type="button" id="301">Agregar al carrito</button>
+      <button type="button" id=${audifono.id} class="comprarUnidad">Agregar al carrito</button>
   
 `
-sectionAudifonos.appendChild(vistaProductosAudifonos)
+  sectionAudifonos.appendChild(vistaProductosAudifonos);
 }
 
 //Barra de busqueda
 
-
 function buscarProducto(nombre) {
-  return listadoProductosStore.filter((producto) => producto.nombre.toLowerCase().includes(nombre.toLowerCase()));
+  return listadoProductosStore.filter((producto) =>
+    producto.nombre.toLowerCase().includes(nombre.toLowerCase())
+  );
 }
+//input y boton
+const busquedaUsuario = document.querySelector("#busqueda");
+const botonBuscar = document.querySelector("#botonBuscar");
 
-let prueba1 = buscarProducto("Sams")
-
-console.log(prueba1)
-
-const busquedaUsuario = document.querySelector("#busqueda")
-
+//h3 y cuerpo de seccion de busqueda
 const sectionBusqueda = document.querySelector("#listaBusqueda");
 const busquedasEnWeb = document.querySelector(".tituloBusqueda");
 
+//Evento con boton buscar
+botonBuscar.addEventListener("click", () => {
+  let informacionBusqueda = busquedaUsuario.value.trim().toLowerCase();
 
-busquedaUsuario.addEventListener("input", (event)=>{
-  let resultadosBusqueda = buscarProducto(event.target.value) /////pendiente
-  console.log(resultadosBusqueda)
-  busquedasEnWeb.classList.add("on")
-  if(resultadosBusqueda.length != 0){
-  for (const resultado of resultadosBusqueda) {
+  if (informacionBusqueda !== "") {
+    let resultadosBusqueda = buscarProducto(informacionBusqueda);
 
-    let vistaBusqueda = document.createElement("article");
-    vistaBusqueda.classList.add("tarjetas")
+    if (resultadosBusqueda.length > 0) {
+      busquedasEnWeb.classList.add("on");
+      for (const resultado of resultadosBusqueda) {
+        let vistaBusqueda = document.createElement("article");
+        vistaBusqueda.classList.add("tarjetas");
 
-    vistaBusqueda.innerHTML = `
+        vistaBusqueda.innerHTML = `
   
     <h3>${resultado.nombre}</h3>
     <img src=${resultado.img} alt="celular">
     <ul>
         <li>Precio: ${resultado.precio}</li>
         <li>Unidades disponibles: ${resultado.stock}</li>
-        <button type="button" id=${resultado.id}>Agregar al carrito</button>
-  `
-  sectionBusqueda.appendChild(vistaBusqueda)
+        `;
+        sectionBusqueda.appendChild(vistaBusqueda);
+      }
+    } else {
+      busquedasEnWeb.classList.add("on");
+      sectionBusqueda.innerHTML = "<p>No se encontraron coincidencias.</p>";
+    }
+  } else {
+    busquedasEnWeb.classList.remove("on");
+    sectionBusqueda.innerHTML = "";
   }
-  }else{
-    busquedasEnWeb.classList.remove("on")
+});
+
+//Evento con tecla enter en input
+busquedaUsuario.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+    let valorbusqueda = event.target.value.trim().toLowerCase();
+
+    if (valorbusqueda !== "") {
+      let informacionBusquedaEnter = buscarProducto(valorbusqueda);
+
+      if (informacionBusquedaEnter.length > 0) {
+        busquedasEnWeb.classList.add("on");
+        for (const resultado of informacionBusquedaEnter) {
+          let vistaBusqueda = document.createElement("article");
+          vistaBusqueda.classList.add("tarjetas");
+
+          vistaBusqueda.innerHTML = `
+  
+    <h3>${resultado.nombre}</h3>
+    <img src=${resultado.img} alt="celular">
+    <ul>
+        <li>Precio: ${resultado.precio}</li>
+        <li>Unidades disponibles: ${resultado.stock}</li>
+    `;
+          sectionBusqueda.appendChild(vistaBusqueda);
+        }
+      } else {
+        busquedasEnWeb.classList.add("on");
+        sectionBusqueda.innerHTML = "<p>No se encontraron coincidencias.</p>";
+      }
+    } else {
+      busquedasEnWeb.classList.remove("on");
+      sectionBusqueda.innerHTML = "";
+    }
   }
+});
+
+//array carrito de compras
+let carritoDeCompras = [];
+
+//Cargar al localStorage informacion en JSON
+
+const guardarEnStorage = (clave, valor) => {
+  localStorage.setItem(clave, valor);
+};
+
+//Función para usar.push al carrito
+function AgregarAlCarrito(nuevoProducto) {
+  carritoDeCompras.push(nuevoProducto);
+  guardarEnStorage(nuevoProducto.id, JSON.stringify(carritoDeCompras));
 }
-)
+
+//Funcion para busqueda exacta de productos por id
+function buscarproductoPorId(id) {
+  const numeroId = parseInt(id);
+  return listadoProductosStore.find((producto) => producto.id === numeroId)
+}
+
+//interacción de la compra
+const botonesDeCompra = document.querySelectorAll(".comprarUnidad");
+
+function elClick(evento) {
+  const idBoton = evento.target.id;
+  let buscarPorId = buscarproductoPorId(idBoton);
+  //Agregar al carro lo que el cliente selecciona
+  AgregarAlCarrito(buscarPorId);
+}
+
+botonesDeCompra.forEach((boton) => {
+  boton.addEventListener("click", elClick);
+})
+
+//claves almacenadas
+/*
+for (let i = 0; i < localStorage.length; i++){
+  let clave = localStorage.key(i);
+  console.log("Clave: " + clave);
+  console.log("Valor: " + localStorage.getItem(clave));
+}
+
+
+/*
+Section en carrito
+const nuevaVenta = document.querySelector("#ventaACliente");
+
+
+for (let i = 0; i < localStorage.length; i++) {
+  let clave = localStorage.key(i);
+  let primerDato = clave;
+  let segundoDato = localStorage.getItem(clave);
+
+  let devueltaAObjeto1 = JSON.parse(primerDato);
+  let devueltaAObjeto2 = JSON.parse(segundoDato);
+
+  devueltaAObjeto1
+  devueltaAObjeto2
+}
+
+*/
+
+
+/*
+101
+main.js:458 
+[{…}]
+0
+: 
+{id: 101, nombre: 'Celular iphone 15 6.1', precio: 799, stock: 100, almacenamiento: '128 GB', …}
+length
+: 
+1
+[[Prototype]]
+: 
+Array(0)
+
+llega algo asi:
+ 101
+ [
+  {}
+ {}
+ ]
+
+*/
+
+
+//luego tomaria ese objeto y lo inyectaria como html por js al carrito en conteo por .length solo el numero de objetos en array
+
+//al final, se agregaria esto en el carrito y se quedaria pendiente un proceso de pago
+
+
+
 
