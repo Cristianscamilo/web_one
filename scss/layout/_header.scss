@@ -23,7 +23,7 @@ header {
         }
 
         form {
-            label[for="text"] {
+            label[for="busqueda"] {
                 display: none;
             }
 
@@ -32,15 +32,6 @@ header {
                 height: 40px;
                 border-radius: 8px;
             }
-            
-            button {
-                height: 40px;
-                width: 90px;
-                border-radius: 5px;
-                background-color: #efd06d;
-                color: white;
-            }
-
         }
     }
 }

@@ -25,9 +25,8 @@
                 <h1> ComerceQe </h1>
             </div>
             <form>
-                <label for="text">Busqueda</label>
-                <input placeholder="  Buscar articulo" type="text">
-                <button id="buscar" type="button">Buscar</button>
+                <label for="busqueda">Busqueda</label>
+                <input placeholder="  Buscar articulo" type="text" id="busqueda">
             </form>
         </div>
         <nav>
@@ -55,7 +54,10 @@
                 </ul>
                 <ul>
                     <li>
-                        <a href="pages/carrito.html">🛒</a>
+                        <a href="pages/carrito.html" class="carritoCompras"> 🛒 </a>
+                        <div>
+                            <h2>20</h2>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -88,6 +90,10 @@
         </section>
         <div id="productosNegocio">
         <h2> PRODUCTOS ACTUALES </h2>
+        <!--Sección 0-->
+            <h3 class="tituloBusqueda">Busquedas</h3>
+            <section id="listaBusqueda">
+            </section>
             <!--Sección 1-->
             <h3>Celulares</h3>
             <section id="listaCelulares">

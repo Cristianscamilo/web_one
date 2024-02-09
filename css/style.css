@@ -66,10 +66,38 @@ nav .loginCompra ul li {
 }
 nav .loginCompra ul li a {
   color: #eede87;
+  cursor: pointer;
   visibility: visible;
 }
 nav .loginCompra ul li a.off {
   visibility: hidden;
+}
+nav .loginCompra ul li .carritoCompras {
+  height: 60px;
+  width: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  font-size: 40px;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+nav .loginCompra ul li div {
+  display: flex;
+}
+nav .loginCompra ul li div h2 {
+  background-color: rgb(235, 205, 11);
+  color: #ffffff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  padding-left: 7px;
+  padding-top: 5px;
 }
 
 header {
@@ -90,20 +118,13 @@ header .logoBusqueda .marcaLogo a img {
 header .logoBusqueda .marcaLogo h1 {
   color: white;
 }
-header .logoBusqueda form label[for=text] {
+header .logoBusqueda form label[for=busqueda] {
   display: none;
 }
 header .logoBusqueda form input {
   width: 40vw;
   height: 40px;
   border-radius: 8px;
-}
-header .logoBusqueda form button {
-  height: 40px;
-  width: 90px;
-  border-radius: 5px;
-  background-color: #efd06d;
-  color: white;
 }
 
 footer {
@@ -146,7 +167,7 @@ main .accesoWeb {
   background-color: #07264b;
   color: white;
   position: fixed;
-  left: 30vw;
+  left: 30%;
   top: 150px;
   border-radius: 8%;
 }
@@ -240,12 +261,59 @@ main #productosNegocio h2 {
   justify-content: center;
   padding: 50px;
 }
-main #productosNegocio h3 {
+main #productosNegocio .tituloBusqueda {
   display: inline-block;
   height: 50px;
   color: #123c6e;
   font-weight: bold;
   height: 50px;
+  visibility: hidden;
+}
+main #productosNegocio .tituloBusqueda.on {
+  visibility: visible;
+}
+main #productosNegocio #listaBusqueda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main #productosNegocio #listaBusqueda h3 {
+  font-size: 30px;
+  height: 50px;
+}
+main #productosNegocio #listaBusqueda .tarjetas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 300px;
+  height: 330px;
+  padding: 20px;
+  margin: 5px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+main #productosNegocio #listaBusqueda .tarjetas h3 {
+  font-size: 15px;
+  height: 50px;
+}
+main #productosNegocio #listaBusqueda .tarjetas img {
+  height: 100px;
+}
+main #productosNegocio #listaBusqueda .tarjetas ul {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+main #productosNegocio #listaBusqueda .tarjetas button {
+  background-color: #efd06d;
+  color: #ffffff;
+  width: 120px;
+  height: 30px;
+  border: none;
+  margin: 10px;
+  border-radius: 5%;
 }
 main #productosNegocio #listaCelulares {
   display: flex;

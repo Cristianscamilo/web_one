@@ -22,7 +22,7 @@ class Celular {
 //Celulares disponibles
 const cel1 = new Celular(
   101,
-  "iphone 15 6.1",
+  "Celular iphone 15 6.1",
   799,
   100,
   "128 GB",
@@ -32,7 +32,7 @@ const cel1 = new Celular(
 );
 const cel2 = new Celular(
   102,
-  "Samsung Galaxy S24 Ultra 6.8",
+  "Celular Samsung Galaxy S24 Ultra 6.8",
   1581,
   50,
   "512 GB",
@@ -42,7 +42,7 @@ const cel2 = new Celular(
 );
 const cel3 = new Celular(
   103,
-  "Xiaomi Poco X5 PRO 5G",
+  "Celular Xiaomi Poco X5 PRO 5G",
   289,
   200,
   "256 GB",
@@ -52,7 +52,7 @@ const cel3 = new Celular(
 );
 const cel4 = new Celular(
   104,
-  "HUAWEI P60 Pro",
+  "Celular HUAWEI P60 Pro",
   1079,
   35,
   "256 GB",
@@ -89,7 +89,7 @@ class Monitor {
 //Monitores disponibles
 const monitor1 = new Monitor(
   201,
-  "HUAWEI MateView GT 34 pulgadas Con Barra de Sonido",
+  "Monitor HUAWEI MateView GT 34 pulgadas Con Barra de Sonido",
   34,
   true,
   664,
@@ -146,7 +146,7 @@ class Audifono {
 //Audifonos disponibles
 const audifono1 = new Audifono(
   301,
-  "Audifono Diadema Bose Noise Cancelling Headphones 700 Blueto Color Black",
+  "Audífonos Diadema Bose Noise Cancelling Headphones 700 Blueto Color Black",
   414,
   20,
   true,
@@ -164,7 +164,7 @@ const audifono2 = new Audifono(
 );
 const audifono3 = new Audifono(
   303,
-  "Diadema Bt Cancelación Ruido Anc Klip Xtreme Oasis Knh-050bk",
+  "Audífonos Diadema Bt Cancelación Ruido Anc Klip Xtreme Oasis Knh-050bk",
   35.79,
   40,
   true,
@@ -334,6 +334,40 @@ function buscarProducto(nombre) {
   return listadoProductosStore.filter((producto) => producto.nombre.toLowerCase().includes(nombre.toLowerCase()));
 }
 
-let prueba1 = buscarProducto("Samsung")
+let prueba1 = buscarProducto("Sams")
 
 console.log(prueba1)
+
+const busquedaUsuario = document.querySelector("#busqueda")
+
+const sectionBusqueda = document.querySelector("#listaBusqueda");
+const busquedasEnWeb = document.querySelector(".tituloBusqueda");
+
+
+busquedaUsuario.addEventListener("input", (event)=>{
+  let resultadosBusqueda = buscarProducto(event.target.value) /////pendiente
+  console.log(resultadosBusqueda)
+  busquedasEnWeb.classList.add("on")
+  if(resultadosBusqueda.length != 0){
+  for (const resultado of resultadosBusqueda) {
+
+    let vistaBusqueda = document.createElement("article");
+    vistaBusqueda.classList.add("tarjetas")
+
+    vistaBusqueda.innerHTML = `
+  
+    <h3>${resultado.nombre}</h3>
+    <img src=${resultado.img} alt="celular">
+    <ul>
+        <li>Precio: ${resultado.precio}</li>
+        <li>Unidades disponibles: ${resultado.stock}</li>
+        <button type="button" id=${resultado.id}>Agregar al carrito</button>
+  `
+  sectionBusqueda.appendChild(vistaBusqueda)
+  }
+  }else{
+    busquedasEnWeb.classList.remove("on")
+  }
+}
+)
+
