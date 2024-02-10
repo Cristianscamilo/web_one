@@ -72,7 +72,7 @@ class Monitor {
     esCurvo,
     precio,
     stock,
-    caracteristicaEspecial,
+    resumen,
     img
   ) {
     this.id = id;
@@ -81,7 +81,7 @@ class Monitor {
     this.esCurvo = esCurvo;
     this.precio = precio;
     this.stock = stock;
-    this.caracteristicaEspecial = caracteristicaEspecial;
+    this.resumen = resumen;
     this.img = img;
   }
 }
@@ -290,7 +290,7 @@ for (const monitor of listaMonitores) {
                         <li>Curvo: ${monitor.esCurvo}</li>
                         <li>Unidades disponibles: ${monitor.stock}</li>
                     </ul>
-                    <p>${monitor.caracteristicaEspecial}</p>
+                    <p>${monitor.resumen}</p>
                     <button type="button" id=${monitor.id} class="comprarUnidad">Agregar al carrito</button>
   
 `;
@@ -414,8 +414,7 @@ const guardarEnStorage = (clave, valor) => {
 
 //Función para usar.push al carrito
 function AgregarAlCarrito(nuevoProducto) {
-  carritoDeCompras.push(nuevoProducto);
-  guardarEnStorage(nuevoProducto.id, JSON.stringify(carritoDeCompras));
+  guardarEnStorage(nuevoProducto.id, JSON.stringify(nuevoProducto));////////
 }
 
 //Funcion para busqueda exacta de productos por id
@@ -438,62 +437,6 @@ botonesDeCompra.forEach((boton) => {
   boton.addEventListener("click", elClick);
 })
 
-//claves almacenadas
-/*
-for (let i = 0; i < localStorage.length; i++){
-  let clave = localStorage.key(i);
-  console.log("Clave: " + clave);
-  console.log("Valor: " + localStorage.getItem(clave));
-}
-
-
-/*
-Section en carrito
-const nuevaVenta = document.querySelector("#ventaACliente");
-
-
-for (let i = 0; i < localStorage.length; i++) {
-  let clave = localStorage.key(i);
-  let primerDato = clave;
-  let segundoDato = localStorage.getItem(clave);
-
-  let devueltaAObjeto1 = JSON.parse(primerDato);
-  let devueltaAObjeto2 = JSON.parse(segundoDato);
-
-  devueltaAObjeto1
-  devueltaAObjeto2
-}
-
-*/
-
-
-/*
-101
-main.js:458 
-[{…}]
-0
-: 
-{id: 101, nombre: 'Celular iphone 15 6.1', precio: 799, stock: 100, almacenamiento: '128 GB', …}
-length
-: 
-1
-[[Prototype]]
-: 
-Array(0)
-
-llega algo asi:
- 101
- [
-  {}
- {}
- ]
-
-*/
-
-
-//luego tomaria ese objeto y lo inyectaria como html por js al carrito en conteo por .length solo el numero de objetos en array
-
-//al final, se agregaria esto en el carrito y se quedaria pendiente un proceso de pago
 
 
 
