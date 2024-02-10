@@ -96,7 +96,7 @@ nav .loginCompra ul li div h2 {
   position: absolute;
   top: 24px;
   right: 10px;
-  padding-left: 7px;
+  padding-left: 8px;
   padding-top: 5px;
 }
 
@@ -162,87 +162,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-main .accesoWeb {
-  visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  width: 500px;
-  height: 400px;
-  font-size: 20px;
-  background-color: #07264b;
-  color: white;
-  position: fixed;
-  left: 30%;
-  top: 150px;
-  border-radius: 8%;
-}
-main .accesoWeb.visibleLogin {
-  visibility: visible;
-}
-main .accesoWeb #regresarOSalir {
-  position: absolute;
-  right: 50px;
-  top: 50px;
-  border-radius: 4px;
-}
-main .accesoWeb form fieldset {
-  width: 100px;
-  display: flex;
-  flex-direction: column;
-  border: none;
-  justify-content: center;
-  align-items: center;
-}
-main .accesoWeb form fieldset legend {
-  display: flex;
-  width: 200px;
-  font-size: 20px;
-  margin-bottom: 10px;
-  justify-content: center;
-}
-main .accesoWeb form fieldset #usuario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-main .accesoWeb form fieldset #usuario input[type=text] {
-  margin: 10px;
-  height: 30px;
-  width: 200px;
-}
-main .accesoWeb form fieldset #claveUsuario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-main .accesoWeb form fieldset #claveUsuario input[type=password] {
-  margin: 10px;
-  height: 30px;
-  width: 200px;
-  margin-bottom: 10px;
-}
-main .accesoWeb form fieldset .accesoNegado {
-  color: red;
-  font-size: 10px;
-  visibility: hidden;
-}
-main .accesoWeb form fieldset .accesoNegado.alertaAcceso {
-  visibility: visible;
-}
-main .accesoWeb form fieldset #olvidoDeClave {
-  color: #ffffff;
-  font-size: 10px;
-}
-main .accesoWeb form button {
-  background-color: #efd06d;
-  margin-top: 10px;
-  color: white;
-  border-radius: 2%;
-  height: 30px;
-  width: 150px;
 }
 main #imagenInicial article {
   display: flex;

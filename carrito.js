@@ -10,6 +10,7 @@ const cargaLogin = document.querySelector(".accesoWeb");
 const cerrarLogin = document.querySelector("#regresarOSalir");
 const alertaSinAcceso = document.querySelector(".accesoNegado");
 const interactuarLogin = document.querySelector(".accesoWeb");
+const numeroEnCarrito = document.querySelector(".cantidadAlCarrito")
 //boton inicio de sesión apertura login
 agregarLogin.addEventListener("click", () => {
   cargaLogin.classList.add("visibleLogin");
@@ -34,9 +35,11 @@ botonIngreso.addEventListener("click", (event) => {
   const registroUsuario = inputRegistroUsuario.value;
   const claveRegistroUser = inputClave.value;
 
+//Login
+
   if (registroUsuario === usuario && claveRegistroUser === clave) {
-    localStorage.setItem("user", registroUsuario);
-    localStorage.setItem("clave", claveRegistroUser);
+    sessionStorage.setItem("user", registroUsuario);
+    sessionStorage.setItem("clave", claveRegistroUser);
 
     interactuarLogin.classList.remove("visibleLogin");
     agregarCierreSesión.classList.remove("off");
@@ -56,8 +59,8 @@ agregarCierreSesión.addEventListener("click", (event) => {
   agregarCierreSesión.classList.add("off");
   agregarLogin.classList.remove("off");
 
-  localStorage.removeItem("user");
-  localStorage.removeItem("clave");
+  sessionStorage.removeItem("user");
+  sessionStorage.removeItem("clave");
 });
 
 //lo que traigo del local Storage
@@ -75,11 +78,7 @@ for (let i = 0; i < localStorage.length; i++) {
   datosLocalStorage.push({ numeroId, productoAgregado });
 }
 
-// Desestructuramos el array y luego el objeto dentro del array
-for (let { numeroId, productoAgregado } of datosLocalStorage) {
-  // Aquí puedes usar numeroId y productoAgregado
-  console.log(numeroId, productoAgregado);
-}
+
 
 //Section en carrito
 const nuevaVenta = document.querySelector("#ventaACliente");
@@ -98,3 +97,16 @@ for (let { productoAgregado } of datosLocalStorage) {
     `;
   nuevaVenta.appendChild(vistaCarrito);
 }
+
+
+//icono carrito
+
+let contadorElementosCar = datosLocalStorage.length
+
+function actualizarLogoCarrito(elementosEnCarro){
+  if (elementosEnCarro > 0) {
+    numeroEnCarrito.innerText = `${elementosEnCarro}`
+  }
+}
+
+actualizarLogoCarrito(contadorElementosCar)

@@ -201,56 +201,6 @@ const cargaLogin = document.querySelector(".accesoWeb");
 const cerrarLogin = document.querySelector("#regresarOSalir");
 const alertaSinAcceso = document.querySelector(".accesoNegado");
 const interactuarLogin = document.querySelector(".accesoWeb");
-//boton inicio de sesión apertura login
-agregarLogin.addEventListener("click", () => {
-  cargaLogin.classList.add("visibleLogin");
-});
-
-//boton cierre de formulario login en x
-cerrarLogin.addEventListener("click", () => {
-  cargaLogin.classList.remove("visibleLogin");
-  alertaSinAcceso.classList.remove("alertaAcceso");
-});
-
-//Registro de información en login
-const inputRegistroUsuario = document.getElementById("nombreEnLogin");
-const inputClave = document.getElementById("claveAcceso");
-
-const botonIngreso = document.getElementById("ingresarAlComercio");
-const botonRegresar = document.getElementById("regresarOSalir");
-
-//inicio de sesión
-botonIngreso.addEventListener("click", (event) => {
-  event.preventDefault();
-
-  const registroUsuario = inputRegistroUsuario.value;
-  const claveRegistroUser = inputClave.value;
-
-  if (registroUsuario === usuario && claveRegistroUser === clave) {
-    localStorage.setItem("user", registroUsuario);
-    localStorage.setItem("clave", claveRegistroUser);
-
-    interactuarLogin.classList.remove("visibleLogin");
-    agregarCierreSesión.classList.remove("off");
-    agregarLogin.classList.add("off");
-    alertaSinAcceso.classList.remove("alertaAcceso");
-  } else {
-    alertaSinAcceso.classList.add("alertaAcceso");
-  }
-});
-
-//Cierre de sesión y borrado de datos storage
-agregarCierreSesión.addEventListener("click", (event) => {
-  event.defaultPrevented;
-
-  confirm("¿Seguro que desea salir de su sesión?");
-
-  agregarCierreSesión.classList.add("off");
-  agregarLogin.classList.remove("off");
-
-  localStorage.removeItem("user");
-  localStorage.removeItem("clave");
-});
 
 //objetos: listaMoviles listaMonitores listaAudifonos
 
@@ -410,6 +360,7 @@ let carritoDeCompras = [];
 
 const guardarEnStorage = (clave, valor) => {
   localStorage.setItem(clave, valor);
+  window.location.reload();                       /////////////////Se agrega recarga para que se actualice icono de inmediato
 };
 
 //Función para usar.push al carrito
@@ -438,6 +389,37 @@ botonesDeCompra.forEach((boton) => {
 })
 
 
+//lo que traigo del local Storage
 
+const datosLocalStorage = [];
+
+for (let i = 0; i < localStorage.length; i++) {
+  let clave = localStorage.key(i);
+  let primerDato = clave;
+  let segundoDato = localStorage.getItem(clave);
+
+  numeroId = JSON.parse(primerDato);
+  productoAgregado = JSON.parse(segundoDato);
+
+  datosLocalStorage.push({ numeroId, productoAgregado });
+}
+
+
+
+//icono carrito
+
+
+const numeroEnCarrito = document.querySelector(".cantidadAlCarrito")
+
+let contadorElementosCar = datosLocalStorage.length
+
+
+function actualizarLogoCarrito(elementosEnCarro){
+  if (elementosEnCarro > 0) {
+    numeroEnCarrito.innerText = `${elementosEnCarro}`
+  }
+}
+
+actualizarLogoCarrito(contadorElementosCar)
 
 

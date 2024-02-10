@@ -45,14 +45,14 @@
                         <a class="cierreDeSesion off">Cerrar sesión</a>
                     </li>
                     <li>
-                        <a class="inicioDeSesion">Iniciar sesión</a>
+                        <a class="inicioDeSesion"> => Iniciar sesión</a>
                     </li>
                 </ul>
                 <ul>
                     <li>
                         <a href="../pages/carrito.html" class="carritoCompras"> 🛒 </a>
                         <div>
-                            <h2>20</h2>
+                            <h2 class="cantidadAlCarrito">0</h2>
                         </div>
                     </li>
                 </ul>
@@ -62,22 +62,22 @@
 <main>
     <div class="accesoWeb">
         <button id="regresarOSalir">❌</button>
-    <form>
-        <fieldset>
-            <legend>Inicio de sesión</legend>
-            <div id="usuario">
-                <label for="nombreEnLogin">Usuario:</label>
-                <input placeholder=" Ingrese su usuario 'pepe' aqui:" type="text" id="nombreEnLogin">
-            </div>
-            <div id="claveUsuario">
-                <label for="claveAcceso">Contraseña:</label>
-                <input placeholder="La clave por defecto es: 123456" type="password" id="claveAcceso">
-            </div>
-            <button id="ingresarAlComercio" type="submit">Ingresar</button>
-            <p class="accesoNegado">Usuario y/o contraseña incorrecta </p>
-            <a href="" id="olvidoDeClave">¿Has olvidado tu contraseña?</a>
-       </fieldset>
-    </form>
+        <form>
+            <fieldset>
+                <legend>Inicio de sesión</legend>
+                <div id="usuario">
+                    <label for="nombreEnLogin">Usuario:</label>
+                    <input placeholder=" Ingrese su usuario 'pepe' aqui:" type="text" id="nombreEnLogin">
+                </div>
+                <div id="claveUsuario">
+                    <label for="claveAcceso">Contraseña:</label>
+                    <input placeholder="La clave por defecto es: 123456" type="password" id="claveAcceso">
+                </div>
+                <button id="ingresarAlComercio" type="submit">Ingresar</button>
+                <p class="accesoNegado">Usuario y/o contraseña incorrecta </p>
+                <a href="" id="olvidoDeClave">¿Has olvidado tu contraseña?</a>
+           </fieldset>
+        </form>
     </div>
     <section id="imagenInicial">
         <article>
@@ -85,11 +85,11 @@
         </article>
     </section>
     <div id="productosNegocio">
-    <h2> TU CARRITO </h2>
-    <h3>Productos</h3>
-    <section id="ventaACliente">
-    </section>
-</div>
+        <h2> TU CARRITO </h2>
+        <h3>Productos</h3>
+        <section id="ventaACliente">
+        </section>
+    </div>
 </main>
 <footer>
     <div class="newsYPages">
@@ -126,7 +126,6 @@
     </section>
 </footer>
 <script src="../carrito.js"></script>
-
 </body>
 </html>
 
