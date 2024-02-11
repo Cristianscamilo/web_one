@@ -85,7 +85,7 @@ nav .loginCompra ul li .carritoCompras {
 nav .loginCompra ul li div {
   display: flex;
 }
-nav .loginCompra ul li div h2 {
+nav .loginCompra ul li div span {
   background-color: rgb(235, 205, 11);
   color: #ffffff;
   width: 26px;

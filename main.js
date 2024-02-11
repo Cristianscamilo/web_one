@@ -7,7 +7,7 @@ let { usuario, clave } = accesoGenerico;
 
 //Constructor Celulares para venta al publico
 class Celular {
-  constructor(id, nombre, precio, stock, almacenamiento, ram, resumen, img) {
+  constructor(id, nombre, precio, stock, almacenamiento, ram, resumen, img, cantidad) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
@@ -16,6 +16,7 @@ class Celular {
     this.ram = ram;
     this.resumen = resumen;
     this.img = img;
+    this.cantidad = cantidad
   }
 }
 //Celulares disponibles
@@ -27,7 +28,8 @@ const cel1 = new Celular(
   "128 GB",
   "6 GB",
   "Descubre el nuevo iPhone, con diseño de titanio aeroespacial, chip A17 Pro revolucionario y sistema de cámaras potente. ¡Atrévete a la innovación, consigue el tuyo ahora!",
-  "img/iphone_15.jpg"
+  "img/iphone_15.jpg",
+  0
 );
 const cel2 = new Celular(
   102,
@@ -37,7 +39,8 @@ const cel2 = new Celular(
   "512 GB",
   "12 GB",
   "¡Descubre el poder del nuevo Galaxy S24 Plus 5G! Llévalo ahora",
-  "img/samsunggalaxys24ultra6.8.jpg"
+  "img/samsunggalaxys24ultra6.8.jpg",
+  0
 );
 const cel3 = new Celular(
   103,
@@ -47,7 +50,8 @@ const cel3 = new Celular(
   "256 GB",
   "8 GB",
   "ofrece un excelente rendimiento para la gama con una experiencia Android a muy buen nivel",
-  "img/Xiaomi-Poco-x5-Pro-5g-Colores.jpg"
+  "img/Xiaomi-Poco-x5-Pro-5g-Colores.jpg",
+  0
 );
 const cel4 = new Celular(
   104,
@@ -57,7 +61,8 @@ const cel4 = new Celular(
   "256 GB",
   "8 GB",
   "Huawei P60 Pro: el nuevo teléfono inteligente de alto rendimiento de Huawei",
-  "img/huaweip60pro.png"
+  "img/huaweip60pro.png",
+  0
 );
 
 //Array con celulares
@@ -73,7 +78,8 @@ class Monitor {
     precio,
     stock,
     resumen,
-    img
+    img,
+    cantidad
   ) {
     this.id = id;
     this.nombre = nombre;
@@ -83,6 +89,7 @@ class Monitor {
     this.stock = stock;
     this.resumen = resumen;
     this.img = img;
+    this.cantidad = cantidad;
   }
 }
 //Monitores disponibles
@@ -94,7 +101,8 @@ const monitor1 = new Monitor(
   664,
   40,
   "Alta frecuencia de actualización y Color cinematográfico",
-  "img/huaweimategt34.png"
+  "img/huaweimategt34.png",
+  0
 );
 const monitor2 = new Monitor(
   202,
@@ -104,7 +112,8 @@ const monitor2 = new Monitor(
   150,
   16,
   "Vista totalmente inmersiva, Más potencia para juegos",
-  "img/samsung24conpanelips.jpg"
+  "img/samsung24conpanelips.jpg",
+  0
 );
 const monitor3 = new Monitor(
   203,
@@ -114,7 +123,8 @@ const monitor3 = new Monitor(
   144,
   10,
   "tecnología AMD FreeSync brinda  movimiento fluido y sin interrupciones en alta resolución en los juegos",
-  "img/monitorlgnegro24gamer.jpg"
+  "img/monitorlgnegro24gamer.jpg",
+  0
 );
 const monitor4 = new Monitor(
   204,
@@ -124,7 +134,8 @@ const monitor4 = new Monitor(
   2018,
   14,
   "Pantalla curva que se adapta completamente al contorno del ojo humano",
-  "img/monitorsamsung49cg930.jpg"
+  "img/monitorsamsung49cg930.jpg",
+  0
 );
 
 //Array con Monitores
@@ -132,7 +143,7 @@ const listaMonitores = [monitor1, monitor2, monitor3, monitor4];
 
 //Constructor Audifonos para venta al publico
 class Audifono {
-  constructor(id, nombre, precio, stock, esInalambrico, resumen, img) {
+  constructor(id, nombre, precio, stock, esInalambrico, resumen, img, cantidad) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
@@ -140,6 +151,7 @@ class Audifono {
     this.esInalambrico = esInalambrico;
     this.resumen = resumen;
     this.img = img;
+    this.cantidad = cantidad;
   }
 }
 //Audifonos disponibles
@@ -150,7 +162,8 @@ const audifono1 = new Audifono(
   20,
   true,
   "El diseño over-ear genera una comodidad insuperable, su sonido envolvente del más alto nivel se convierte en el protagonista de la escena.",
-  "img/audifonodiademabosenoisecancellingheadphones700bluetocolorblack.jpg"
+  "img/audifonodiademabosenoisecancellingheadphones700bluetocolorblack.jpg",
+  0
 );
 const audifono2 = new Audifono(
   302,
@@ -159,7 +172,8 @@ const audifono2 = new Audifono(
   20,
   true,
   " Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida.",
-  "img/audífonosgamerinalámbricoslogitechgseriesg733blancoluz.jpg"
+  "img/audífonosgamerinalámbricoslogitechgseriesg733blancoluz.jpg",
+  0
 );
 const audifono3 = new Audifono(
   303,
@@ -168,7 +182,8 @@ const audifono3 = new Audifono(
   40,
   true,
   "Crea tu propio mundo de sonido con estos audifonos que ofrecen Cancelación de Ruido Activa (ANC)",
-  "img/diademabtcancelaciónruidoancklipxtremeoasisknh-050bk.jpg"
+  "img/diademabtcancelaciónruidoancklipxtremeoasisknh-050bk.jpg",
+  0
 );
 const audifono4 = new Audifono(
   304,
@@ -177,7 +192,8 @@ const audifono4 = new Audifono(
   40,
   false,
   "Al ser on-ear se apoyan en tus orejas cómodamente y ofrecen una gran calidad de sonido.",
-  "img/sonyfonfunciondemanoslibres.jpg"
+  "img/sonyfonfunciondemanoslibres.jpg",
+  0
 );
 const audifono5 = new Audifono(
   305,
@@ -186,7 +202,8 @@ const audifono5 = new Audifono(
   25,
   false,
   "Perfecto para toda ocasión y cualquier plataforma, audífono diseñado con tu comodidad en mente",
-  "img/audifonoalámbricodiademagamerrgbcontroladorluces1.jpg"
+  "img/audifonoalámbricodiademagamerrgbcontroladorluces1.jpg",
+  0
 );
 
 //Array con Audifonos
@@ -281,6 +298,8 @@ const botonBuscar = document.querySelector("#botonBuscar");
 
 //h3 y cuerpo de seccion de busqueda
 const sectionBusqueda = document.querySelector("#listaBusqueda");
+
+
 const busquedasEnWeb = document.querySelector(".tituloBusqueda");
 
 //Evento con boton buscar
@@ -335,10 +354,11 @@ busquedaUsuario.addEventListener("keypress", (event) => {
           vistaBusqueda.innerHTML = `
   
     <h3>${resultado.nombre}</h3>
-    <img src=${resultado.img} alt="celular">
+    <img src=${resultado.img} alt="productoBusqueda">
     <ul>
         <li>Precio: ${resultado.precio}</li>
         <li>Unidades disponibles: ${resultado.stock}</li>
+        <button type="button" id=${resultado.id} class="comprarUnidad">Agregar al carrito</button>
     `;
           sectionBusqueda.appendChild(vistaBusqueda);
         }
@@ -359,20 +379,36 @@ let carritoDeCompras = [];
 //Cargar al localStorage informacion en JSON
 
 const guardarEnStorage = (clave, valor) => {
-  localStorage.setItem(clave, valor);
-  window.location.reload();                       /////////////////Se agrega recarga para que se actualice icono de inmediato
+  localStorage.setItem(clave, valor);                    
 };
 
 //Función para usar.push al carrito
-function AgregarAlCarrito(nuevoProducto) {
+function agregarAlCarrito(nuevoProducto) {
   guardarEnStorage(nuevoProducto.id, JSON.stringify(nuevoProducto));////////
+}
+
+//sumar Unidad
+function adicionarUnidad(objet){ 
+objet.cantidad++
+return objet.cantidad
 }
 
 //Funcion para busqueda exacta de productos por id
 function buscarproductoPorId(id) {
   const numeroId = parseInt(id);
-  return listadoProductosStore.find((producto) => producto.id === numeroId)
+  let respuesta = listadoProductosStore.find((producto) => producto.id === numeroId)
+  
+  if (respuesta) {
+    adicionarUnidad(respuesta); // Incrementar la cantidad del producto encontrado
+  } else {
+    console.log(`Producto con ID ${numeroId} no encontrado`);
+  }
+  return respuesta;  
 }
+
+
+
+
 
 //interacción de la compra
 const botonesDeCompra = document.querySelectorAll(".comprarUnidad");
@@ -381,7 +417,10 @@ function elClick(evento) {
   const idBoton = evento.target.id;
   let buscarPorId = buscarproductoPorId(idBoton);
   //Agregar al carro lo que el cliente selecciona
-  AgregarAlCarrito(buscarPorId);
+  agregarAlCarrito(buscarPorId);
+  setTimeout(() => {
+    window.location.reload();
+  }, 3000);
 }
 
 botonesDeCompra.forEach((boton) => {
@@ -389,9 +428,14 @@ botonesDeCompra.forEach((boton) => {
 })
 
 
+
+
 //lo que traigo del local Storage
 
 const datosLocalStorage = [];
+
+let productoAgregado
+let numeroId 
 
 for (let i = 0; i < localStorage.length; i++) {
   let clave = localStorage.key(i);
@@ -403,7 +447,6 @@ for (let i = 0; i < localStorage.length; i++) {
 
   datosLocalStorage.push({ numeroId, productoAgregado });
 }
-
 
 
 //icono carrito
@@ -421,5 +464,4 @@ function actualizarLogoCarrito(elementosEnCarro){
 }
 
 actualizarLogoCarrito(contadorElementosCar)
-
 

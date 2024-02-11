@@ -54,7 +54,7 @@ botonIngreso.addEventListener("click", (event) => {
 agregarCierreSesión.addEventListener("click", (event) => {
   event.defaultPrevented;
 
-  confirm("¿Seguro que desea salir de su sesión?");
+ /// confirm("¿Seguro que desea salir de su sesión?");           se debe agregar con la libreria
 
   agregarCierreSesión.classList.add("off");
   agregarLogin.classList.remove("off");
@@ -67,6 +67,9 @@ agregarCierreSesión.addEventListener("click", (event) => {
 
 const datosLocalStorage = [];
 
+
+
+
 for (let i = 0; i < localStorage.length; i++) {
   let clave = localStorage.key(i);
   let primerDato = clave;
@@ -78,6 +81,15 @@ for (let i = 0; i < localStorage.length; i++) {
   datosLocalStorage.push({ numeroId, productoAgregado });
 }
 
+let [primerObjeto, segundoObjeto] = datosLocalStorage;
+
+
+
+
+//Selector de botones
+const cantidadEnPAntalla = document.querySelectorAll(".cantidadEnPantalla")
+const btnSumarUnidad = document.querySelectorAll(".adicionarUnidad")
+const btnrestarUnidad = document.querySelectorAll(".restarUnidad")
 
 
 //Section en carrito
@@ -94,9 +106,29 @@ for (let { productoAgregado } of datosLocalStorage) {
       <li>Unidades disponibles: ${productoAgregado.stock}</li>
     </ul>
     <p>${productoAgregado.resumen}</p>
+    <div>
+    <button class="adicionarUnidad" id="${productoAgregado.id}">+</button>
+    <span class="cantidadEnPantalla" id="${productoAgregado.id}">${productoAgregado.cantidad}</span>
+    <button class="restarUnidad" id="${productoAgregado.id}">-</button>
+    </div>
     `;
   nuevaVenta.appendChild(vistaCarrito);
 }
+
+
+
+//Cargar al localStorage informacion en JSON
+
+const guardarEnStorage = (clave, valor) => {
+  localStorage.setItem(clave, valor);                    
+};
+
+//Función para usar.push al carrito
+function agregarAlCarrito(nuevoProducto) {
+  guardarEnStorage(nuevoProducto.id, JSON.stringify(nuevoProducto));////////
+}
+
+
 
 
 //icono carrito
