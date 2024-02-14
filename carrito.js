@@ -10,7 +10,7 @@ const cargaLogin = document.querySelector(".accesoWeb");
 const cerrarLogin = document.querySelector("#regresarOSalir");
 const alertaSinAcceso = document.querySelector(".accesoNegado");
 const interactuarLogin = document.querySelector(".accesoWeb");
-const numeroEnCarrito = document.querySelector(".cantidadAlCarrito")
+const numeroEnCarrito = document.querySelector(".cantidadAlCarrito");
 //boton inicio de sesión apertura login
 agregarLogin.addEventListener("click", () => {
   cargaLogin.classList.add("visibleLogin");
@@ -35,7 +35,7 @@ botonIngreso.addEventListener("click", (event) => {
   const registroUsuario = inputRegistroUsuario.value;
   const claveRegistroUser = inputClave.value;
 
-//Login
+  //Login
 
   if (registroUsuario === usuario && claveRegistroUser === clave) {
     sessionStorage.setItem("user", registroUsuario);
@@ -54,7 +54,7 @@ botonIngreso.addEventListener("click", (event) => {
 agregarCierreSesión.addEventListener("click", (event) => {
   event.defaultPrevented;
 
- /// confirm("¿Seguro que desea salir de su sesión?");           se debe agregar con la libreria
+  /// confirm("¿Seguro que desea salir de su sesión?");           se debe agregar con la libreria
 
   agregarCierreSesión.classList.add("off");
   agregarLogin.classList.remove("off");
@@ -66,9 +66,6 @@ agregarCierreSesión.addEventListener("click", (event) => {
 //lo que traigo del local Storage
 
 const datosLocalStorage = [];
-
-
-
 
 for (let i = 0; i < localStorage.length; i++) {
   let clave = localStorage.key(i);
@@ -83,13 +80,9 @@ for (let i = 0; i < localStorage.length; i++) {
 
 let [primerObjeto, segundoObjeto] = datosLocalStorage;
 
-
-
-
 //Selector de botones
-const cantidadEnPAntalla = document.querySelectorAll(".cantidadEnPantalla")
-const btnSumarUnidad = document.querySelectorAll(".adicionarUnidad")
-const btnrestarUnidad = document.querySelectorAll(".restarUnidad")
+const cantidadEnPAntalla = document.querySelectorAll(".cantidadEnPantalla");
+const btnSumarUnidad = document.querySelectorAll(".adicionarUnidad");
 
 
 //Section en carrito
@@ -108,37 +101,93 @@ for (let { productoAgregado } of datosLocalStorage) {
     <p>${productoAgregado.resumen}</p>
     <div>
     <button class="adicionarUnidad" id="${productoAgregado.id}">+</button>
-    <span class="cantidadEnPantalla" id="${productoAgregado.id}">${productoAgregado.cantidad}</span>
+    <span class="cantidadEnPantalla">${productoAgregado.cantidad}</span>
     <button class="restarUnidad" id="${productoAgregado.id}">-</button>
     </div>
     `;
   nuevaVenta.appendChild(vistaCarrito);
+
+  const btnSumarUnidad = document.querySelectorAll(".adicionarUnidad");
+  const btnrestarUnidad = document.querySelectorAll(".restarUnidad");
+
+  btnSumarUnidad.forEach((boton) => {
+    boton.addEventListener("click", identificadorBtnsuma);
+  });
+
+  btnrestarUnidad.forEach((boton) => {
+    boton.addEventListener("click", identificadorBtnresta);
+  });
 }
 
+// //////////funcion selector y suma de unidad////////////
 
+function identificadorBtnsuma(evento) {
+  const idBtnSuma = parseInt(evento.target.id);
+  let buscarID = producIdsacadoStorageSuma(idBtnSuma);
+  agregarAlCarrito(buscarID);
+}
+
+// //////////funcion selector y resta de unidad////////////
+
+function identificadorBtnresta(evento) {
+  const idBtnSuma = parseInt(evento.target.id);
+  let buscarID = producIdsacadoStorageResta(idBtnSuma);
+  agregarAlCarrito(buscarID);
+}
+
+///Funcion de busqueda y suma
+
+function producIdsacadoStorageSuma(numeroId) {
+  let respuesta = datosLocalStorage.find(
+    (producto) => producto.numeroId === numeroId
+  );
+  if (respuesta.productoAgregado.cantidad < respuesta.productoAgregado.stock) {
+    respuesta.productoAgregado.cantidad++;
+    return respuesta.productoAgregado;
+  }
+}
+
+///Funcion de busqueda y resta
+
+function producIdsacadoStorageResta(numeroId) {
+  let respuesta = datosLocalStorage.find(
+    (producto) => producto.numeroId === numeroId
+  );
+  if (respuesta.productoAgregado.cantidad > 1) {
+    respuesta.productoAgregado.cantidad--;
+    return respuesta.productoAgregado;
+  }
+}
 
 //Cargar al localStorage informacion en JSON
 
 const guardarEnStorage = (clave, valor) => {
-  localStorage.setItem(clave, valor);                    
+  localStorage.setItem(clave, valor);
 };
 
 //Función para usar.push al carrito
 function agregarAlCarrito(nuevoProducto) {
-  guardarEnStorage(nuevoProducto.id, JSON.stringify(nuevoProducto));////////
+  guardarEnStorage(nuevoProducto.id, JSON.stringify(nuevoProducto));
+  setTimeout(() => {
+    window.location.reload();
+  }, 0);
 }
 
 
 
+
+
+
+///////////////
 
 //icono carrito
 
-let contadorElementosCar = datosLocalStorage.length
+let contadorElementosCar = datosLocalStorage.length;
 
-function actualizarLogoCarrito(elementosEnCarro){
+function actualizarLogoCarrito(elementosEnCarro) {
   if (elementosEnCarro > 0) {
-    numeroEnCarrito.innerText = `${elementosEnCarro}`
+    numeroEnCarrito.innerText = `${elementosEnCarro}`;
   }
 }
 
-actualizarLogoCarrito(contadorElementosCar)
+actualizarLogoCarrito(contadorElementosCar);
