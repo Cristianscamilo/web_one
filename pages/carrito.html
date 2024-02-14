@@ -34,9 +34,6 @@
                     <li>
                         <a href="../pages/nosotros.html">Nosotros</a>
                     </li>
-                    <li>
-                        <a href="">Ayuda</a>
-                    </li>
                 </ul>
             </div>
             <div class="loginCompra">
@@ -89,13 +86,35 @@
         <h3>Productos</h3>
         <section id="ventaACliente">
         </section>
+        <button id="irAPago"> Comprar </button>
     </div>
+    <section id="ventaPRoductos">
+        <h4>Resumen De Compra</h4>
+        <table>
+            <thead>
+               <tr>
+                 <th>Nombre Item</th>
+                 <th>Cantidad</th>
+                 <th>Precio Unitario</th>
+                 <th>Precio Final</th>
+               </tr>
+            </thead>
+            <tbody id="itemsComprados">
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">Total</td>
+                <td id="total"> 2852</td>
+              </tr>
+            </tfoot>
+        </table>     
+        </section>
 </main>
 <footer>
     <div class="newsYPages">
         <section>
             <article class="newsLetter">
-                <h2>Suscribete a nuestro Newsletter</h2>
+                <h4>Suscribete a nuestro Newsletter</h4>
                 <form>
                     <label for="email">Mail</label>
                     <input placeholder="Ejemplo@mail.com" type="email" id="email">
@@ -113,9 +132,6 @@
                 </li>
                 <li>
                     <a href="pages/contacto.html">Contacto</a>
-                </li>
-                <li>
-                    <a href="">Ayuda</a>
                 </li>
             </ul>
         </article>

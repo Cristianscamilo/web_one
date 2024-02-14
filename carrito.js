@@ -84,7 +84,6 @@ let [primerObjeto, segundoObjeto] = datosLocalStorage;
 const cantidadEnPAntalla = document.querySelectorAll(".cantidadEnPantalla");
 const btnSumarUnidad = document.querySelectorAll(".adicionarUnidad");
 
-
 //Section en carrito
 const nuevaVenta = document.querySelector("#ventaACliente");
 
@@ -92,23 +91,26 @@ for (let { productoAgregado } of datosLocalStorage) {
   let vistaCarrito = document.createElement("article");
   vistaCarrito.classList.add("tarjetas");
   vistaCarrito.innerHTML = `
+    <button class="eliminarDelCarrito" id="${productoAgregado.id}">❌</button>
     <h3>${productoAgregado.nombre}</h3>
     <img src=../${productoAgregado.img} alt="productoSeleccionado">
     <ul>
-      <li>Precio: ${productoAgregado.precio} usd</li>
+      <li>Precio unidad: ${productoAgregado.precio} usd</li>
       <li>Unidades disponibles: ${productoAgregado.stock}</li>
     </ul>
     <p>${productoAgregado.resumen}</p>
     <div>
-    <button class="adicionarUnidad" id="${productoAgregado.id}">+</button>
-    <span class="cantidadEnPantalla">${productoAgregado.cantidad}</span>
     <button class="restarUnidad" id="${productoAgregado.id}">-</button>
+    <span class="cantidadEnPantalla">${productoAgregado.cantidad}</span>
+    <button class="adicionarUnidad" id="${productoAgregado.id}">+</button>
+    
     </div>
     `;
   nuevaVenta.appendChild(vistaCarrito);
 
   const btnSumarUnidad = document.querySelectorAll(".adicionarUnidad");
   const btnrestarUnidad = document.querySelectorAll(".restarUnidad");
+  const btnBorrarDelCarrito = document.querySelectorAll(".eliminarDelCarrito");
 
   btnSumarUnidad.forEach((boton) => {
     boton.addEventListener("click", identificadorBtnsuma);
@@ -117,9 +119,13 @@ for (let { productoAgregado } of datosLocalStorage) {
   btnrestarUnidad.forEach((boton) => {
     boton.addEventListener("click", identificadorBtnresta);
   });
+
+  btnBorrarDelCarrito.forEach((boton) => {
+    boton.addEventListener("click", identificadorParaBorrarItem);
+  });
 }
 
-// //////////funcion selector y suma de unidad////////////
+//funcion selector y suma de unidad
 
 function identificadorBtnsuma(evento) {
   const idBtnSuma = parseInt(evento.target.id);
@@ -127,7 +133,7 @@ function identificadorBtnsuma(evento) {
   agregarAlCarrito(buscarID);
 }
 
-// //////////funcion selector y resta de unidad////////////
+//funcion selector y resta de unidad
 
 function identificadorBtnresta(evento) {
   const idBtnSuma = parseInt(evento.target.id);
@@ -135,7 +141,7 @@ function identificadorBtnresta(evento) {
   agregarAlCarrito(buscarID);
 }
 
-///Funcion de busqueda y suma
+//Funcion de busqueda y suma
 
 function producIdsacadoStorageSuma(numeroId) {
   let respuesta = datosLocalStorage.find(
@@ -147,7 +153,7 @@ function producIdsacadoStorageSuma(numeroId) {
   }
 }
 
-///Funcion de busqueda y resta
+//Funcion de busqueda y resta
 
 function producIdsacadoStorageResta(numeroId) {
   let respuesta = datosLocalStorage.find(
@@ -160,10 +166,18 @@ function producIdsacadoStorageResta(numeroId) {
 }
 
 //Cargar al localStorage informacion en JSON
-
 const guardarEnStorage = (clave, valor) => {
   localStorage.setItem(clave, valor);
 };
+
+//Funcion de busqueda y eliminacion de item///////////////////
+function identificadorParaBorrarItem(evento) {
+  const idABorrar = parseInt(evento.target.id)
+  localStorage.removeItem(idABorrar);
+  setTimeout(() => {
+    window.location.reload();
+  }, 0);
+}
 
 //Función para usar.push al carrito
 function agregarAlCarrito(nuevoProducto) {
@@ -173,15 +187,7 @@ function agregarAlCarrito(nuevoProducto) {
   }, 0);
 }
 
-
-
-
-
-
-///////////////
-
 //icono carrito
-
 let contadorElementosCar = datosLocalStorage.length;
 
 function actualizarLogoCarrito(elementosEnCarro) {
@@ -189,5 +195,25 @@ function actualizarLogoCarrito(elementosEnCarro) {
     numeroEnCarrito.innerText = `${elementosEnCarro}`;
   }
 }
-
 actualizarLogoCarrito(contadorElementosCar);
+
+
+const resumenCompra = document.querySelector("#itemsComprados");
+
+
+function comprarProductosCarrito(){
+  
+  for (let { productoAgregado } of datosLocalStorage){
+    let detallesPago = document.createElement("tr");
+    detallesPago.classList.add("resumenCompra");
+    detallesPago.innerHTML = `
+        <td>${productoAgregado.nombre}</td>
+        <td>${productoAgregado.cantidad}</td>
+        <td>${productoAgregado.precio}</td>
+        <td>${productoAgregado.precio * productoAgregado.cantidad  }</td>  
+  `
+  resumenCompra.appendChild(detallesPago);
+  }
+}
+
+comprarProductosCarrito()
