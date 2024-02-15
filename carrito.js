@@ -76,19 +76,29 @@ agregarCierreSesión.addEventListener("click", (event) => {
   seccionVentaDelProducto.classList.remove("conAcceso");
 });
 ///Pago y cierre de venta
-btnPAgar.addEventListener("click", () => {
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Tu compra se ha realizado con exito",
-    showConfirmButton: true,
+btnPAgar.addEventListener("click", limpiarStorageLocal)
+
+function limpiarStorageLocal() {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
     timer: 3000,
-  }).then((res) => {
-    if (res.isConfirmed) {
-      localStorage.clear();//////////////////////////////////////////////
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
     }
   });
-});
+  Toast.fire({
+    icon: "success",
+    title: "Gracias por tu compra!"
+  });
+  setTimeout(() => {
+    window.location.reload();
+  }, 4000);
+  localStorage.clear()
+}
 
 //lo que traigo del local Storage
 

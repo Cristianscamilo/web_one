@@ -420,7 +420,7 @@ function elClick(evento) {
   agregarAlCarrito(buscarPorId);
   setTimeout(() => {
     window.location.reload();
-  }, 3000);
+  }, 2000);
 }
 
 botonesDeCompra.forEach((boton) => {
