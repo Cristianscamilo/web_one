@@ -584,7 +584,7 @@ main #productosNegocio #ventaACliente .tarjetas div .adicionarUnidad {
   font-weight: bold;
   border: none;
 }
-main #productosNegocio #irAPago {
+main #productosNegocio .irAPago {
   background-color: #efd06d;
   color: white;
   height: 40px;
@@ -593,8 +593,17 @@ main #productosNegocio #irAPago {
   font-weight: bold;
   border: none;
   margin-bottom: 20px;
+  visibility: hidden;
 }
-main #ventaPRoductos {
+main #productosNegocio .irAPago.btnActivo {
+  visibility: visible;
+}
+main .ventaPRoductos {
+  height: 2%;
+  visibility: hidden;
+}
+main .ventaPRoductos.conAcceso {
+  visibility: visible;
   background-color: #123c6e;
   color: #ffffff;
   padding: 10px;
@@ -602,49 +611,59 @@ main #ventaPRoductos {
   width: 700px;
   min-height: 200px;
 }
-main #ventaPRoductos h4 {
+main .ventaPRoductos h4 {
   margin-bottom: 20px;
 }
-main #ventaPRoductos table thead tr {
+main .ventaPRoductos table thead tr {
   font-size: 13px;
   height: 40px;
 }
-main #ventaPRoductos table thead tr th {
+main .ventaPRoductos table thead tr th {
   text-align: center;
   margin: 20px;
   height: 40px;
 }
-main #ventaPRoductos table thead tr th:first-child {
+main .ventaPRoductos table thead tr th:first-child {
   text-align: center;
   width: 300px;
 }
-main #ventaPRoductos table thead tr th:nth-child(2) {
+main .ventaPRoductos table thead tr th:nth-child(2) {
   width: 100px;
 }
-main #ventaPRoductos table thead tr th:nth-child(3) {
+main .ventaPRoductos table thead tr th:nth-child(3) {
   width: 100px;
 }
-main #ventaPRoductos table thead tr th:nth-child(4) {
+main .ventaPRoductos table thead tr th:nth-child(4) {
   width: 100px;
 }
-main #ventaPRoductos table #itemsComprados .resumenCompra td {
+main .ventaPRoductos table #itemsComprados .resumenCompra td {
   text-align: center;
 }
-main #ventaPRoductos table #itemsComprados .resumenCompra td:first-child {
+main .ventaPRoductos table #itemsComprados .resumenCompra td:first-child {
   text-align: left;
 }
-main #ventaPRoductos table #itemsComprados .resumenCompra td:nth-child(3) {
+main .ventaPRoductos table #itemsComprados .resumenCompra td:nth-child(3) {
   text-align: right;
 }
-main #ventaPRoductos table #itemsComprados .resumenCompra td:nth-child(4) {
+main .ventaPRoductos table #itemsComprados .resumenCompra td:nth-child(4) {
   text-align: right;
 }
-main #ventaPRoductos table tfoot tr td {
+main .ventaPRoductos table tfoot tr td {
   text-align: right;
   color: #efd06d;
   height: 80px;
   font-size: 15px;
   padding-right: 5px;
+}
+main .ventaPRoductos #pagoCarrito {
+  background-color: #efd06d;
+  color: white;
+  height: 40px;
+  width: 100px;
+  border-radius: 8%;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

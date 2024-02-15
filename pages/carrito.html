@@ -64,11 +64,11 @@
                 <legend>Inicio de sesión</legend>
                 <div id="usuario">
                     <label for="nombreEnLogin">Usuario:</label>
-                    <input placeholder=" Ingrese su usuario 'pepe' aqui:" type="text" id="nombreEnLogin">
+                    <input placeholder=" Ingrese su usuario 'pepe' aqui:" type="text" id="nombreEnLogin" autocomplete="current-password">
                 </div>
                 <div id="claveUsuario">
                     <label for="claveAcceso">Contraseña:</label>
-                    <input placeholder="La clave por defecto es: 123456" type="password" id="claveAcceso">
+                    <input placeholder="La clave por defecto es: 123456" type="password" id="claveAcceso" autocomplete="current-password">
                 </div>
                 <button id="ingresarAlComercio" type="submit">Ingresar</button>
                 <p class="accesoNegado">Usuario y/o contraseña incorrecta </p>
@@ -86,9 +86,9 @@
         <h3>Productos</h3>
         <section id="ventaACliente">
         </section>
-        <button id="irAPago"> Comprar </button>
+        <button class="irAPago"> Comprar </button>
     </div>
-    <section id="ventaPRoductos">
+    <section class="ventaPRoductos">
         <h4>Resumen De Compra</h4>
         <table>
             <thead>
@@ -104,10 +104,11 @@
             <tfoot>
               <tr>
                 <td colspan="3">Total</td>
-                <td id="total"> 2852</td>
+                <td id="total">0</td>
               </tr>
             </tfoot>
-        </table>     
+        </table>
+        <button id="pagoCarrito"> Pagar </button>     
         </section>
 </main>
 <footer>
@@ -141,6 +142,7 @@
         <span>&copy;2024</span>
     </section>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../carrito.js"></script>
 </body>
 </html>

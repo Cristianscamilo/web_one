@@ -190,7 +190,7 @@ main {
         }
       }
     }
-    #irAPago {
+    .irAPago {
       background-color: #efd06d;
       color: #ffff;
       height: 40px;
@@ -199,28 +199,36 @@ main {
       font-weight: bold;
       border: none;
       margin-bottom: 20px;
+      visibility: hidden;
+      &.btnActivo{
+        visibility: visible;
+      }
     }
   }
-  #ventaPRoductos {
-    background-color: #123c6e;
-    color: #ffffff;
-    padding: 10px;
-    font-size: 10px;
-    width: 700px;
-    min-height: 200px;
+  .ventaPRoductos {
+    height: 2%;
+    visibility: hidden;
+
+    &.conAcceso {
+      visibility: visible;
+      background-color: #123c6e;
+      color: #ffffff;
+      padding: 10px;
+      font-size: 10px;
+      width: 700px;
+      min-height: 200px;
+    }
 
     h4 {
       margin-bottom: 20px;
     }
     table {
-
-      thead{
-
-        tr{
+      thead {
+        tr {
           font-size: 13px;
           height: 40px;
-          
-          th{
+
+          th {
             text-align: center;
             margin: 20px;
             height: 40px;
@@ -230,37 +238,37 @@ main {
               width: 300px;
             }
 
-            &:nth-child(2){
+            &:nth-child(2) {
               width: 100px;
             }
-            &:nth-child(3){
+            &:nth-child(3) {
               width: 100px;
             }
-            &:nth-child(4){
+            &:nth-child(4) {
               width: 100px;
             }
           }
         }
       }
-      #itemsComprados{
-        .resumenCompra{
-          td{
-              text-align: center;
-              &:first-child {
-                text-align: left;
-              }
-              &:nth-child(3){
-                text-align: right;
-              }
-              &:nth-child(4){
-                text-align: right;
-              }
+      #itemsComprados {
+        .resumenCompra {
+          td {
+            text-align: center;
+            &:first-child {
+              text-align: left;
+            }
+            &:nth-child(3) {
+              text-align: right;
+            }
+            &:nth-child(4) {
+              text-align: right;
+            }
           }
         }
       }
-      tfoot{
-        tr{
-          td{
+      tfoot {
+        tr {
+          td {
             text-align: right;
             color: #efd06d;
             height: 80px;
@@ -269,6 +277,16 @@ main {
           }
         }
       }
+    }
+    #pagoCarrito {
+      background-color: #efd06d;
+      color: #ffff;
+      height: 40px;
+      width: 100px;
+      border-radius: 8%;
+      font-weight: bold;
+      border: none;
+      margin-bottom: 20px;
     }
   }
 }

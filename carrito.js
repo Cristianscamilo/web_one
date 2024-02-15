@@ -11,6 +11,10 @@ const cerrarLogin = document.querySelector("#regresarOSalir");
 const alertaSinAcceso = document.querySelector(".accesoNegado");
 const interactuarLogin = document.querySelector(".accesoWeb");
 const numeroEnCarrito = document.querySelector(".cantidadAlCarrito");
+const seccionVentaDelProducto = document.querySelector(".ventaPRoductos");
+const btnComprar = document.querySelector(".irAPago");
+const btnPAgar = document.querySelector("#pagoCarrito");
+
 //boton inicio de sesión apertura login
 agregarLogin.addEventListener("click", () => {
   cargaLogin.classList.add("visibleLogin");
@@ -28,15 +32,14 @@ const inputClave = document.getElementById("claveAcceso");
 
 const botonIngreso = document.getElementById("ingresarAlComercio");
 const botonRegresar = document.getElementById("regresarOSalir");
+
 //inicio de sesión
 botonIngreso.addEventListener("click", (event) => {
   event.preventDefault();
 
   const registroUsuario = inputRegistroUsuario.value;
   const claveRegistroUser = inputClave.value;
-
   //Login
-
   if (registroUsuario === usuario && claveRegistroUser === clave) {
     sessionStorage.setItem("user", registroUsuario);
     sessionStorage.setItem("clave", claveRegistroUser);
@@ -45,10 +48,18 @@ botonIngreso.addEventListener("click", (event) => {
     agregarCierreSesión.classList.remove("off");
     agregarLogin.classList.add("off");
     alertaSinAcceso.classList.remove("alertaAcceso");
+    //Se activo opcion de compra
+    btnComprar.classList.add("btnActivo");
+    btnComprar.addEventListener("click", agregarSeccionPAgo);
   } else {
     alertaSinAcceso.classList.add("alertaAcceso");
   }
 });
+
+//Habilitación de opción de compra, solo si el Login es exitoso
+function agregarSeccionPAgo() {
+  seccionVentaDelProducto.classList.add("conAcceso");
+}
 
 //Cierre de sesión y borrado de datos storage
 agregarCierreSesión.addEventListener("click", (event) => {
@@ -61,6 +72,22 @@ agregarCierreSesión.addEventListener("click", (event) => {
 
   sessionStorage.removeItem("user");
   sessionStorage.removeItem("clave");
+  btnComprar.classList.remove("btnActivo");
+  seccionVentaDelProducto.classList.remove("conAcceso");
+});
+///Pago y cierre de venta
+btnPAgar.addEventListener("click", () => {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Tu compra se ha realizado con exito",
+    showConfirmButton: true,
+    timer: 3000,
+  }).then((res) => {
+    if (res.isConfirmed) {
+      localStorage.clear();//////////////////////////////////////////////
+    }
+  });
 });
 
 //lo que traigo del local Storage
@@ -95,7 +122,9 @@ for (let { productoAgregado } of datosLocalStorage) {
     <h3>${productoAgregado.nombre}</h3>
     <img src=../${productoAgregado.img} alt="productoSeleccionado">
     <ul>
-      <li>Precio unidad: ${productoAgregado.precio} usd</li>
+      <li>Precio: ${
+        productoAgregado.precio * productoAgregado.cantidad
+      } usd</li>
       <li>Unidades disponibles: ${productoAgregado.stock}</li>
     </ul>
     <p>${productoAgregado.resumen}</p>
@@ -170,9 +199,9 @@ const guardarEnStorage = (clave, valor) => {
   localStorage.setItem(clave, valor);
 };
 
-//Funcion de busqueda y eliminacion de item///////////////////
+//Funcion de busqueda y eliminacion de item
 function identificadorParaBorrarItem(evento) {
-  const idABorrar = parseInt(evento.target.id)
+  const idABorrar = parseInt(evento.target.id);
   localStorage.removeItem(idABorrar);
   setTimeout(() => {
     window.location.reload();
@@ -197,23 +226,38 @@ function actualizarLogoCarrito(elementosEnCarro) {
 }
 actualizarLogoCarrito(contadorElementosCar);
 
+//Funcion Resumen de compra segun array
 
 const resumenCompra = document.querySelector("#itemsComprados");
 
-
-function comprarProductosCarrito(){
-  
-  for (let { productoAgregado } of datosLocalStorage){
+function comprarProductosCarrito() {
+  for (let { productoAgregado } of datosLocalStorage) {
     let detallesPago = document.createElement("tr");
     detallesPago.classList.add("resumenCompra");
     detallesPago.innerHTML = `
         <td>${productoAgregado.nombre}</td>
         <td>${productoAgregado.cantidad}</td>
         <td>${productoAgregado.precio}</td>
-        <td>${productoAgregado.precio * productoAgregado.cantidad  }</td>  
-  `
-  resumenCompra.appendChild(detallesPago);
+        <td>${productoAgregado.precio * productoAgregado.cantidad}</td>  
+  `;
+    resumenCompra.appendChild(detallesPago);
   }
 }
 
-comprarProductosCarrito()
+comprarProductosCarrito(); /////////////////////////////
+
+//Funcion total a pagar
+
+const valorTotalDePago = document.getElementById("total");
+
+function PagoTotal() {
+  let valorTotal = datosLocalStorage.reduce((acumulador, dato) => {
+    return (
+      acumulador + dato.productoAgregado.precio * dato.productoAgregado.cantidad
+    );
+  }, 0);
+
+  valorTotalDePago.innerText = `${valorTotal.toFixed(0)}`;
+}
+
+PagoTotal(); ////////////////////////////////////////////
