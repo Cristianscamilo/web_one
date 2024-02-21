@@ -322,8 +322,15 @@ botonBuscar.addEventListener("click", () => {
     <ul>
         <li>Precio: ${resultado.precio}</li>
         <li>Unidades disponibles: ${resultado.stock}</li>
+        <button type="button" id=${resultado.id} class="comprarUnidadB">Agregar al carrito</button>
         `;
         sectionBusqueda.appendChild(vistaBusqueda);
+
+        const opcionComprarU = document.querySelectorAll(".comprarUnidadB")
+
+          opcionComprarU.forEach((boton) => {
+            boton.addEventListener("click", elClick);
+          }) 
       }
     } else {
       busquedasEnWeb.classList.add("on");
@@ -358,9 +365,16 @@ busquedaUsuario.addEventListener("keypress", (event) => {
     <ul>
         <li>Precio: ${resultado.precio}</li>
         <li>Unidades disponibles: ${resultado.stock}</li>
-        <button type="button" id=${resultado.id} class="comprarUnidad">Agregar al carrito</button>
+        <button type="button" id=${resultado.id} class="comprarUnidadB">Agregar al carrito</button>
     `;
           sectionBusqueda.appendChild(vistaBusqueda);
+
+          const opcionComprarU = document.querySelectorAll(".comprarUnidadB")
+
+          opcionComprarU.forEach((boton) => {
+            boton.addEventListener("click", elClick);
+          })
+
         }
       } else {
         busquedasEnWeb.classList.add("on");
@@ -420,7 +434,7 @@ function elClick(evento) {
   agregarAlCarrito(buscarPorId);
   setTimeout(() => {
     window.location.reload();
-  }, 2000);
+  }, 1000);
 }
 
 botonesDeCompra.forEach((boton) => {
