@@ -1,33 +1,53 @@
 footer {
-    background-color: #15849a;
+  background-color: #15849a;
 
-    .newsYPages {
+  .newsYPages {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    color: #efd06d;
+
+    .newsLetter {
+      margin: 10px;
+      h4 {
+        margin-bottom: 10px;
+      }
+
+      form {
+        label[for="email"] {
+          display: none;
+        }
+
+        input {
+          width: 20vw;
+          height: 30px;
+          border-radius: 6px;
+        }
+        button {
+          background-color: #efd06d;
+          margin-top: 10px;
+          color: #ffff;
+          border-radius: 8%;
+          height: 30px;
+          width: 100px;
+        }
+      }
+    }
+
+    .pagesFooter {
+      ul {
         display: flex;
         flex-direction: row;
-        padding: 20px;
-        justify-content: space-between;
-        align-items: flex-end;
-
-        color: #efd06d;
-
-        .newsLetter {
-            margin: 10px;
-            h4{
-                margin-bottom: 10px;
-            }
+        li {
+          padding: 10px;
+          a {
+            color: #efd06d;
+          }
         }
-
-        .pagesFooter {
-            ul {
-                display: flex;
-                flex-direction: row;
-                li {
-                    padding: 10px;
-                    a {
-                        color: #efd06d;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }

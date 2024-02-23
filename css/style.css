@@ -114,6 +114,7 @@ header .logoBusqueda .marcaLogo {
 }
 header .logoBusqueda .marcaLogo a img {
   width: 50%;
+  border-radius: 50%;
 }
 header .logoBusqueda .marcaLogo h1 {
   color: white;
@@ -151,6 +152,22 @@ footer .newsYPages .newsLetter {
 }
 footer .newsYPages .newsLetter h4 {
   margin-bottom: 10px;
+}
+footer .newsYPages .newsLetter form label[for=email] {
+  display: none;
+}
+footer .newsYPages .newsLetter form input {
+  width: 20vw;
+  height: 30px;
+  border-radius: 6px;
+}
+footer .newsYPages .newsLetter form button {
+  background-color: #efd06d;
+  margin-top: 10px;
+  color: white;
+  border-radius: 8%;
+  height: 30px;
+  width: 100px;
 }
 footer .newsYPages .pagesFooter ul {
   display: flex;
@@ -664,6 +681,118 @@ main .ventaPRoductos #pagoCarrito {
   font-weight: bold;
   border: none;
   margin-bottom: 20px;
+}
+
+main {
+  background-color: #123c6e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #imagenInicial article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #imagenInicial article img {
+  width: 600px;
+  padding: 40px;
+}
+main #productosNegocioFuturos {
+  background-color: #123c6e;
+}
+main #productosNegocioFuturos #categoriasfuturas {
+  background-color: #efd06d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main #productosNegocioFuturos #categoriasfuturas h2 {
+  color: #123c6e;
+  margin: 30px 20px 30px 20px;
+  width: 100%;
+  padding-left: 35%;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria .nuevoProducto {
+  padding: 10px;
+  padding-top: 40px;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 350px;
+  height: 650px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 2%;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria .nuevoProducto h3 {
+  margin-top: 10px;
+  color: #efd06d;
+  font-size: 35px;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria .nuevoProducto h4 {
+  margin-top: 10px;
+  color: #123c6e;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria .nuevoProducto img {
+  margin-top: 10px;
+  height: 170px;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria .nuevoProducto p {
+  margin-top: 10px;
+  color: black;
+  width: 90%;
+  font-size: 12px;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria .nuevoProducto .precioDolares {
+  background-color: #31c582;
+  color: #ffffff;
+  border-radius: 2%;
+  padding: 5px;
+  font-size: 10px;
+  height: 25px;
+  width: 185px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  position: absolute;
+  margin-top: 38%;
+}
+main #productosNegocioFuturos #categoriasfuturas #listaPRoductoPorCategoria .nuevoProducto .proximo {
+  padding: 5px;
+  background-color: #ef9f6d;
+  color: #ffffff;
+  height: 30px;
+  width: 240px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  position: absolute;
+  margin-top: 15%;
+}
+
+#nosotros {
+  background-color: #ffffff;
+  width: 100vw;
+  min-height: 50vh;
+}
+#nosotros #presentacion {
+  margin: 100px;
+  padding-left: 10%;
+  padding-right: 20%;
+}
+#nosotros #presentacion h2 {
+  color: #efd06d;
+  margin-bottom: 30px;
+}
+#nosotros #presentacion p {
+  color: #123c6e;
+  margin: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

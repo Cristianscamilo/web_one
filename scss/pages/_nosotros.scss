@@ -1,0 +1,18 @@
+#nosotros {
+  background-color: #ffffff;
+  width: 100vw;
+  min-height: 50vh;
+  #presentacion {
+    margin: 100px;
+    padding-left: 10%;
+    padding-right: 20%;
+    h2 {
+      color: #efd06d;
+      margin-bottom: 30px;
+    }
+    p {
+      color: #123c6e;
+      margin: 20px;
+    }
+  }
+}
