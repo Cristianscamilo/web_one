@@ -26,5 +26,25 @@ fetch(link)
         <span class="proximo">proximamente en el negocio<span>
         `;
       nuevosproductos.appendChild(nuevoItem);
-    });
+    })
+  })
+  .catch((error) => {
+    console.log("Ocurrió un error:", error);
+    console.log("Por favor, verifica la URL: https://fakestoreapi.com");
   });
+
+
+  //suscripcion
+
+const suscripcionNEws = document.getElementById("suscripcion")
+
+suscripcionNEws.addEventListener("click", (event)=>{
+  event.preventDefault()
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Te has suscrito al Newsletter",
+    showConfirmButton: false,
+    timer: 2000
+  });
+})

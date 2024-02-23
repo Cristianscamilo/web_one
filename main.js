@@ -479,3 +479,18 @@ function actualizarLogoCarrito(elementosEnCarro){
 
 actualizarLogoCarrito(contadorElementosCar)
 
+
+//suscripcion
+
+const suscripcionNEws = document.getElementById("suscripcion")
+
+suscripcionNEws.addEventListener("click", (event)=>{
+  event.preventDefault()
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Te has suscrito al Newsletter",
+    showConfirmButton: false,
+    timer: 2000
+  });
+})
